@@ -30,66 +30,72 @@
         <div class="mx-auto max-w-7xl py-8 sm:py-16 lg:py-24">
             <div class="text-center">
                 <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-                    <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                      48 employees helped this week <i class="text-xl iconoir-stat-up align-[-5px]" aria-hidden="true"></i>
+                    <div
+                        class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                        <span id="ag68f-counter">48</span> employees helped this week <i
+                            class="text-xl iconoir-stat-up align-[-5px]" aria-hidden="true"></i>
                     </div>
-                  </div>
-                <h1 class="text-4xl font-bold tracking-tight text-gray-900 font-serif sm:text-6xl">A hotline for tech employees to vent</h1>
-                <p class="mt-6 text-lg leading-8 text-gray-600">Sometimes, all you need is somebody who understands your frustration</p>
+                </div>
+                <h1 class="text-4xl font-bold tracking-tight text-gray-900 font-serif sm:text-6xl">A hotline for <span
+                        class="text-orange-400">tech employees</span> to vent</h1>
+                <p class="mt-6 text-lg leading-8 text-gray-600">Saving you from an existential crisis just in time for
+                    morning standup</p>
                 <div class="mt-10 text-left">
 
                     {# <form class="gform space-y-6" method="POST" data-email={{ config.extra.email_address }} action={{
                         config.extra.form_script }}> #}
-                    <form class="gform mx-auto space-y-4 lg:w-96">
-                        <div>
-                            <label for="email" class="block mb-2 text-md font-medium text-gray-900">Phone
-                                number</label>
-                            <input type="tel" id="phone_number" name="phone_number"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5"
-                                placeholder="555-555-5555" required>
-                        </div>
-                        <div class="sm:col-span-4">
-                            <label for="message" class="block mb-2 text-md font-medium text-gray-900">What's
-                                up?</label>
-                            <textarea type="message" id="message" name="message" rows="1"
-                                class="block p-2.5 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500"
-                                placeholder="A super brief description is fine" required></textarea>
-                        </div>
-                        <div>
-                            <label for="message" class="hidden mb-2 text-md font-medium text-gray-900">What's your
-                                favorite movie?</label>
-                            <input type="text" id="crimsonkangaroo" name="crimsonkangaroo"
-                                class="hidden p-3 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500">
-                        </div>
-                        <button type="submit"
-                            class="inline-block rounded-lg text-orange-100 bg-orange-500 px-4 py-1.5 text-base leading-7 text-white ring-1 ring-orange-500 hover:bg-orange-600 hover:ring-orange-600">
-                            Call me now
-                            <i class="pl-1 iconoir-phone-income text-orange-100 text-lg align-[-3px]" aria-hidden="true"></i>
-                        </button>
-
-                        <button type="submit"
-                            class="ml-4 rounded-lg px-4 py-1.5 text-base leading-7 ring-1 ring-emerald-900/20 hover:ring-emerald-900/30">
-                            Book a time
-                            <i class="pl-1 iconoir-calendar-plus text-lg align-[-3px]" aria-hidden="true"></i>
-                        </button>
-
-                        <div class="flex">
-                            <span class="relative flex h-3 w-3 mt-1.5">
-                                <span
-                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-                            </span>
-                            <div class="pl-3 mt-0.5 text-sm font-light text-gray-500 dark:text-gray-400">
-                                Current wait is <span class="text-emerald-500">&lt;5 minutes</span>
+                        <form class="gform mx-auto space-y-4 lg:w-96">
+                            <div>
+                                <label for="email" class="block mb-2 text-md font-medium text-gray-900">Phone
+                                    number</label>
+                                <input type="tel" id="phone_number" name="phone_number"
+                                    class="border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5"
+                                    placeholder="555-555-5555" required>
                             </div>
-                        </div>
+                            <div>
+                                <label for="message" class="block mb-2 text-md font-medium text-gray-900">What's
+                                    up?</label>
+                                <textarea type="message" id="message" name="message" rows="1"
+                                    class="p-2.5 w-full text-md text-gray-900 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500"
+                                    placeholder="my ass is definitely about to get laid off" required></textarea>
+                            </div>
+                            <div>
+                                <label for="message" class="hidden block mb-2 text-md font-medium text-gray-900">What's
+                                    your
+                                    favorite movie?</label>
+                                <input type="text" id="movie" name="movie" placeholder="Gotcha!"
+                                    class="hidden p-2.5 w-full text-md text-gray-900 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500">
+                            </div>
+                            <button type="submit"
+                                class="inline-block rounded-lg text-orange-100 bg-orange-500 px-4 py-1.5 text-base leading-7 text-white ring-1 ring-orange-500 hover:bg-orange-600 hover:ring-orange-600">
+                                Call me now
+                                <i class="pl-1 iconoir-phone-income text-orange-100 text-lg align-[-3px]"
+                                    aria-hidden="true"></i>
+                            </button>
 
-                        <div class="hidden thankyou_message">
-                            <p class="text-orange-600 font-semibold text-base">
-                                Message sent successfully!
-                            </p>
-                        </div>
-                    </form>
+                            <button type="submit"
+                                class="ml-4 rounded-lg px-4 py-1.5 text-base leading-7 ring-1 ring-emerald-900/20 hover:ring-emerald-900/30">
+                                Book for later
+                                <i class="pl-1 iconoir-calendar-plus text-lg align-[-3px]" aria-hidden="true"></i>
+                            </button>
+
+                            <div class="flex">
+                                <span class="relative flex h-3 w-3 mt-1.5">
+                                    <span
+                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                                </span>
+                                <div class="pl-3 mt-0.5 text-sm font-light text-gray-500 dark:text-gray-400">
+                                    Current wait time is <span class="text-emerald-500">&lt;5 minutes</span>
+                                </div>
+                            </div>
+
+                            <div class="hidden thankyou_message">
+                                <p class="text-orange-600 font-semibold text-base">
+                                    Message sent successfully!
+                                </p>
+                            </div>
+                        </form>
                 </div>
             </div>
         </div>
@@ -102,19 +108,19 @@
             class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
             <div>
                 <div class="mb-4 text-sm font-light text-orange-500">Features</div>
-                <h2 class="text-3xl font-bold font-serif tracking-tight text-gray-900 sm:text-4xl">Yes, this is real.
+                <h2 class="text-3xl font-bold font-serif tracking-tight text-gray-900 sm:text-4xl">Yes, this is actually real
                 </h2>
-                <p class="mt-4 text-gray-500">The walnut wood card tray is precision milled to perfectly fit a stack of
-                    Focus cards. The powder coated steel divider separates active cards from new ones, or can be used to
-                    archive important task lists.</p>
+                <p class="mt-4 text-gray-500 text-lg">We are disgruntled tech employees volunteering as an outlet for our fellow
+                    demoralized techies to rant about their job. This isn't a side hustle, and there aren't any strings
+                    attached. After all, we already make enough money with our inflated salaries and RSUs.</p>
 
                 <dl class="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
                     <div class="border-t border-gray-200 pt-4">
-                        <dt class="font-semibold font-serif text-gray-900">Origin</dt>
+                        <dt class="font-semibold font-serif text-gray-900">100% free</dt>
                         <dd class="mt-2 text-sm text-gray-500">Designed by Good Goods, Inc.</dd>
                     </div>
                     <div class="border-t border-gray-200 pt-4">
-                        <dt class="font-semibold font-serif text-gray-900">Material</dt>
+                        <dt class="font-semibold font-serif text-gray-900">Anonymous</dt>
                         <dd class="mt-2 text-sm text-gray-500">Solid walnut base with rare earth magnets and powder
                             coated steel card cover</dd>
                     </div>
@@ -158,25 +164,27 @@
 
     <div class="bg-white py-24 sm:py-32">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <h2 class="text-center text-lg font-light leading-8 text-gray-500 sm:text-xl dark:text-gray-400">Trusted by
-                your coworkers at these leading firms</h2>
+            <h2 class="mb-4 text-4xl text-center font-extrabold text-gray-900 dark:text-white font-serif">
+                Here are some random logos</h2>
+            <p class="mb-5 font-light text-center text-gray-500 sm:text-xl dark:text-gray-400">Our MBA
+                buddy promised us these would excite users</p>
             <div
                 class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-                <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                    src="https://tailwindui.com/img/logos/158x48/transistor-logo-gray-900.svg" alt="Transistor"
-                    width="158" height="48">
-                <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                    src="https://tailwindui.com/img/logos/158x48/reform-logo-gray-900.svg" alt="Reform" width="158"
-                    height="48">
-                <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                    src="https://tailwindui.com/img/logos/158x48/tuple-logo-gray-900.svg" alt="Tuple" width="158"
-                    height="48">
-                <img class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-                    src="https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-900.svg" alt="SavvyCal" width="158"
-                    height="48">
-                <img class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-                    src="https://tailwindui.com/img/logos/158x48/statamic-logo-gray-900.svg" alt="Statamic" width="158"
-                    height="48">
+                <img class="mx-auto col-span-2 grayscale contrast-200 brightness-0 max-h-12 w-24 lg:w-28 object-contain lg:col-span-1"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2880px-Amazon_logo.svg.png"
+                    alt="Amazon">
+                <img class="mx-auto col-span-2 grayscale contrast-200 brightness-0 max-h-12 w-24 lg:w-32 object-contain lg:col-span-1"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/2880px-Microsoft_logo_%282012%29.svg.png"
+                    alt="Microsoft">
+                <img class="mx-auto col-span-2 grayscale contrast-200 brightness-0 max-h-12 w-24 lg:w-40 object-contain lg:col-span-1"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2880px-Google_2015_logo.svg.png"
+                    alt="Google">
+                <img class="mx-auto col-span-2 grayscale contrast-200 brightness-0 max-h-12 w-24 lg:w-32 object-contain sm:col-start-2 lg:col-span-1"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/P.F._Chang%27s_logo.svg/2880px-P.F._Chang%27s_logo.svg.png"
+                    alt="PF Changs">
+                <img class="mx-auto col-span-2 grayscale contrast-200 brightness-0 col-start-2 max-h-12 w-24 lg:w-32 object-contain sm:col-start-auto lg:col-span-1"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/2880px-Meta_Platforms_Inc._logo.svg.png"
+                    alt="Meta">
             </div>
         </div>
     </div>
@@ -213,7 +221,7 @@
                 <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white font-serif">
                     Helping tech employees, for free</h2>
                 <p class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">Our mission is supported by a
-                    network of volunteer tech employees who generously donate their time</p>
+                    network of volunteer tech employees who donate their time</p>
             </div>
             <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
                 <!-- Pricing Card -->
