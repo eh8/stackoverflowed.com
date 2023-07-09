@@ -27,62 +27,63 @@
 
     <section class="bg-stone-100">
         <div class="mx-auto max-w-7xl py-16 sm:py-16 px-6">
-                <h1 class="text-4xl text-center font-bold tracking-tight text-gray-900 font-serif sm:text-6xl">A hotline for <span
-                        class="text-orange-500">tech employees</span></h1>
-                <p class="mt-6 text-center text-lg leading-8 text-gray-600">Saving you from an existential crisis in time for
-                    morning standup</p>
+            <h1 class="text-4xl text-center font-bold tracking-tight text-gray-900 font-serif sm:text-6xl">A therapy
+                hotline for <span class="text-orange-500">tech people</span></h1>
+            <p class="mt-6 text-center text-lg leading-8 text-gray-600">Saving you from an existential crisis in time
+                for
+                morning standup</p>
 
-                    {# <form class="gform space-y-6" method="POST" data-email={{ config.extra.email_address }} action={{
-                        config.extra.form_script }}> #}
-                        <form class="gform mx-auto space-y-4 mt-10 max-w-sm">
-                            <div class="inline-flex w-full" role="group">
-                                <button
-                                    class="p-4 text-sm font-medium text-gray-600 bg-gray-100 border border-gray-300 rounded-l-xl">
-                                    +1
-                                </button>
-                                <input type="tel" id="phone_number" name="phone_number"
-                                    class="p-4 border-l-0 border border-gray-300 text-gray-900 text-md rounded-r-xl focus:ring-orange-500 focus:border-orange-500 block w-full"
-                                    placeholder="Your phone number" required>
-                            </div>
-                            <textarea type="message" id="message" name="message" rows="1"
-                                class="p-4 w-full text-md text-gray-900 rounded-xl border border-gray-300 focus:ring-orange-500 focus:border-orange-500"
-                                placeholder="What's up?" required></textarea>
-                            <input type="text" id="movie" name="movie" placeholder="Gotcha!"
-                                class="hidden p-2.5 w-full text-md text-gray-900 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500">
-                            <button type="submit"
-                                class="block mx-auto w-full rounded-lg bg-orange-500 px-4 py-1.5 text-base leading-7 text-white hover:bg-orange-600">
-                                Call me now
-                                <i class="pl-1 iconoir-phone-income text-lg align-[-3px]" aria-hidden="true"></i>
-                            </button>
-                            <a
-                                class="block mx-auto w-full rounded-lg px-4 py-1.5 text-base leading-7 hover:text-gray-500 text-center">
-                                Book later
-                                <i class="pl-1 iconoir-calendar-plus text-lg align-[-3px]" aria-hidden="true"></i>
-                            </a>
+            {# <form class="gform space-y-6" method="POST" data-email={{ config.extra.email_address }} action={{
+                config.extra.form_script }}> #}
+                <form class="gform mx-auto space-y-4 mt-10 max-w-sm">
+                    <div class="inline-flex w-full" role="group">
+                        <button
+                            class="p-4 text-sm font-medium text-gray-600 bg-gray-100 border border-gray-300 rounded-l-xl font-mono">
+                            +1
+                        </button>
+                        <input type="tel" id="phone_number" name="phone_number"
+                            class="p-4 border-l-0 border border-gray-300 text-gray-900 text-md rounded-r-xl focus:ring-orange-500 focus:border-orange-500 block w-full"
+                            placeholder="Your phone number" required>
+                    </div>
+                    <textarea type="message" id="message" name="message" rows="1"
+                        class="p-4 w-full text-md text-gray-900 rounded-xl border border-gray-300 focus:ring-orange-500 focus:border-orange-500"
+                        placeholder="What's up?" required></textarea>
+                    <input type="text" id="movie" name="movie" placeholder="Gotcha!"
+                        class="hidden p-2.5 w-full text-md text-gray-900 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500">
+                    <button type="submit"
+                        class="block mx-auto w-full rounded-lg bg-orange-500 px-4 py-1.5 text-base leading-7 text-white hover:bg-orange-600">
+                        Call me now
+                        <i class="pl-1 iconoir-phone-income text-lg align-[-3px]" aria-hidden="true"></i>
+                    </button>
+                    <a
+                        class="block mx-auto w-full rounded-lg px-4 py-1.5 text-base leading-7 hover:text-gray-500 text-center">
+                        Book later
+                        <i class="pl-1 iconoir-calendar-plus text-lg align-[-3px]" aria-hidden="true"></i>
+                    </a>
 
-                            <div class="flex items-center justify-center">
-                                <span class="relative flex h-3 w-3">
-                                    <span
-                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                    <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-                                </span>
-                                <div class="pl-3 text-sm font-light text-gray-500">
-                                    Current wait time is <span class="text-emerald-500">&lt;5 minutes</span>
-                                </div>
-                            </div>
+                    <div class="flex items-center justify-center">
+                        <span class="relative flex h-3 w-3">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                        </span>
+                        <div class="pl-3 text-sm font-light text-stone-500">
+                            Current wait time is <span class="text-emerald-600 font-semibold">5 minutes</span>
+                        </div>
+                    </div>
 
-                            <div class="hidden thankyou_message">
-                                <p class="text-orange-600 font-semibold text-base">
-                                    Message sent successfully!
-                                </p>
-                            </div>
-                        </form>
+                    <div class="hidden thankyou_message">
+                        <p class="text-orange-600 font-semibold text-base">
+                            Message sent successfully!
+                        </p>
+                    </div>
+                </form>
         </div>
     </section>
 
     <section class="bg-stone-100">
         <div class="mx-auto max-w-7xl py-16 px-6 lg:px-8 text-center">
-            <div class="mb-4 text-sm font-semibold uppercase tracking-wider text-stone-500">Our users may or may not work here</div>
+            <div class="mb-4 text-sm text-stone-500">Our users may or may not work here</div>
 
             <div
                 class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
@@ -105,7 +106,7 @@
         </div>
     </section>
 
-    <section class="bg-white">
+    <section class="bg-stone-200">
         <div class="py-16 px-4 mx-auto max-w-screen-xl lg:py-32 lg:px-6 text-center">
             <h2 class="mb-8 lg:mb-16 font-serif text-2xl lg:text-4xl tracking-tight font-extrabold text-gray-900">
                 Yes, this is real</h2>
@@ -121,7 +122,7 @@
                         </svg>
                     </div>
                     <h3 class="mb-2 font-semibold">Free</h3>
-                    <p class="text-gray-500">All of us are volunteers working in tech who want to help our fellow
+                    <p class="text-gray-700">All of us are volunteers working in tech who want to help our fellow
                         demoralized techies. No strings attached here.</p>
                 </div>
                 <div>
@@ -135,7 +136,7 @@
                         </svg>
                     </div>
                     <h3 class="mb-2 font-semibold">Anonymous</h3>
-                    <p class="text-gray-500">We never ask for your identity or employer, so only discuss as much as you
+                    <p class="text-gray-700">We never ask for your identity or employer, so only discuss as much as you
                         want—we only ask that you respect your NDA.</p>
                 </div>
                 <div>
@@ -149,61 +150,61 @@
                         </svg>
                     </div>
                     <h3 class="mb-2 font-semibold">Effective</h3>
-                    <p class="text-gray-500">Complaining to somebody who understands your frustrations on both a
+                    <p class="text-gray-700">Complaining to somebody who understands your frustrations on both a
                         technical and spirtual level is quite the experience.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="bg-white">
-        <div class="py-16 lg:py-32 px-6">
+    <section class="bg-stone-100">
+        <div class="py-16 lg:py-32 px-6 ">
             <div class="mx-auto items-center text-center pb-16">
-                <h2 class="text-2xl font-bold font-serif tracking-tight text-gray-900 lg:text-4xl">Streamline your
-                    mental health
+                <h2 class="text-2xl font-bold font-serif tracking-tight text-gray-900 lg:text-4xl">You have stuff to
+                    vent about
                 </h2>
-                <p class="mt-4 text-gray-500 text-lg">Our stunningly basic service is unlike anything you've seen
+                <p class="mt-4 text-gray-500 text-lg">And we want to hear about it
                 </p>
             </div>
-    
+
             <div class="max-w-screen-xl mx-auto pb-10">
                 <div class="grid grid-cols-1 gap-8">
-              
-                  <!-- Feature 1 -->
-                  <div class="flex flex-col-reverse md:flex-row md:gap-x-10">
-                    <div class="md:w-1/3">
-                      <h2 class="font-semibold mb-2">Poor communication</h2>
-                      <p class="text-md text-gray-500">The Drawstring Canister is water and tear resistant with durable canvas construction. This bag holds up to the demands of daily use while keeping your snacks secure.</p>
+
+                    <!-- Feature 1 -->
+                    <div class="flex flex-col-reverse md:flex-row md:gap-x-10 md:item-center">
+                        <div class="md:w-1/3">
+                            <h2 class="font-semibold mb-2">Poor communication</h2>
+                            <p class="text-md text-gray-500">Helping you grapple with your coworker's etiquette</p>
+                        </div>
+                        <div class="md:w-2/3 mb-6 md:mb-0">
+                            <img src="comms.png" alt="Feature 1 Image" class="w-full rounded-xl">
+                        </div>
                     </div>
-                    <div class="md:w-2/3 mb-6 md:mb-0">
-                      <img src="prod.jpg" alt="Feature 1 Image" class="w-full rounded-xl">
+
+                    <!-- Feature 2 -->
+                    <div class="flex flex-col-reverse md:flex-row md:gap-x-10 md:item-center">
+                        <div class="md:w-1/3">
+                            <h2 class="font-semibold mb-2">Gross </h2>
+                            <p class="text-md text-gray-500">This 1-pagers and planning documents</p>
+                        </div>
+                        <div class="md:w-2/3 mb-6 md:mb-0">
+                            <img src="complex.png" alt="Feature 2 Image" class="w-full rounded-xl">
+                        </div>
                     </div>
-                  </div>
-              
-                  <!-- Feature 2 -->
-                  <div class="flex flex-col-reverse md:flex-row md:gap-x-10">
-                    <div class="md:w-1/3">
-                      <h2 class="font-semibold mb-2">Gross incompetence</h2>
-                      <p class="text-md text-gray-500">Everything you need, nothing you don't. This bag has the simple, contemporary design that enables you to tell everyone you know about how essentialism is the only rational way to live life.</p>
+
+                    <!-- Feature 3 -->
+                    <div class="flex flex-col-reverse md:flex-row md:gap-x-10 md:item-center">
+                        <div class="md:w-1/3">
+                            <h2 class="font-semibold mb-2">Business ambiguity</h2>
+                            <p class="text-md text-gray-500">We provide the antidote to buzzword venom</p>
+                        </div>
+                        <div class="md:w-2/3 mb-6 md:mb-0">
+                            <img src="features.png" alt="Feature 3 Image" class="w-full rounded-xl">
+                        </div>
                     </div>
-                    <div class="md:w-2/3 mb-6 md:mb-0">
-                      <img src="prod.jpg" alt="Feature 2 Image" class="w-full rounded-xl">
-                    </div>
-                  </div>
-              
-                  <!-- Feature 3 -->
-                  <div class="flex flex-col-reverse md:flex-row md:gap-x-10">
-                    <div class="md:w-1/3">
-                      <h2 class="font-semibold mb-2">Business ambiguity</h2>
-                      <p class="text-md text-gray-500">Never lose your snacks again with our patent-pending snack stash pocket system. With dedicated pouches for each of your snacking needs, the Drawstring Canister unlocks new levels of efficiency and convenience.</p>
-                    </div>
-                    <div class="md:w-2/3 mb-6 md:mb-0">
-                      <img src="prod.jpg" alt="Feature 3 Image" class="w-full rounded-xl">
-                    </div>
-                  </div>
-              
+
                 </div>
-              </div>
+            </div>
         </div>
     </section>
 
@@ -218,15 +219,14 @@
                 </svg>
                 <blockquote>
                     <p class="text-lg lg:text-2xl font-serif text-gray-900">My girlfriend doesn't understand
-                        why I rant about my team's awful documentation so often. Sucks that my team doesn't
-                        even have any documentation, and I don't actually have a girlfriend.</p>
+                        why I rant about my team's frequent outages. Sucks that I don't actually have a girlfriend.</p>
                 </blockquote>
                 <figcaption class="flex items-center justify-center mt-6 space-x-3">
                     <img class="w-10 h-10 rounded-full" src="dude.jpg" alt="profile picture">
                     <div class="flex items-center divide-x-2 divide-gray-500">
-                        <div class="pr-3 font-semibold font-serif text-gray-900">Anonymous engineer
+                        <div class="pr-3 font-semibold font-serif text-gray-900">Anonymous
                         </div>
-                        <div class="pl-3 text-sm font-light text-gray-500">Amazon</div>
+                        <div class="pl-3 text-sm font-light text-gray-500">Software engineer</div>
                     </div>
                 </figcaption>
             </figure>
@@ -472,6 +472,61 @@
                         started</a>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white">
+        <div class="py-16 lg:py-32 px-6 ">
+            <div class="mx-auto items-center text-center pb-16">
+                <h2 class="text-2xl font-bold font-serif tracking-tight text-gray-900 lg:text-4xl">Frequently asked
+                    questions
+                </h2>
+            </div>
+
+            <div class="max-w-screen-xl mx-auto pb-10">
+                <div class="grid grid-cols-1 gap-8">
+
+                    <!-- Feature 1 -->
+                    <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b pb-8">
+                        <div class="md:w-1/3">
+                            <h2 class="font-semibold mb-2">Poor communication</h2>
+                        </div>
+                        <div class="md:w-2/3 mb-6 md:mb-0">
+                            <p class="text-md text-gray-500">Helping you grapple with your coworker's etiquette</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b pb-8">
+                        <div class="md:w-1/3">
+                            <h2 class="font-semibold mb-2">Is this affilated with Stack Overflow?</h2>
+                        </div>
+                        <div class="md:w-2/3 mb-6 md:mb-0">
+                            <p class="text-md text-gray-500">No.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b pb-8">
+                        <div class="md:w-1/3">
+                            <h2 class="font-semibold mb-2">Are you allowed to use the name Stack Overflowed?</h2>
+                        </div>
+                        <div class="md:w-2/3 mb-6 md:mb-0">
+                            <p class="text-md text-gray-500">We hope so.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b pb-8">
+                        <div class="md:w-1/3">
+                            <h2 class="font-semibold mb-2">Business ambiguity</h2>
+                        </div>
+                        <div class="md:w-2/3 mb-6 md:mb-0">
+                            <p class="text-md text-gray-500">Helping you grapple with your coworker's etiquette</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
