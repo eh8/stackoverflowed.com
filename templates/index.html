@@ -4,32 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#f97316">
+    <link rel="shortcut icon" href="/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
     <link rel="stylesheet" href="{{ get_url(path="tailwind.css") | safe }}">
 </head>
 
-<body class="antialiased">
+<body class="antialiased scroll-smooth">
     <header class="bg-white border-t-4 border-orange-500 border-b border-b-gray-200 sticky top-0 z-10">
-        <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between py-3.5 px-6" aria-label="Global">
             <div class="flex lg:flex-1">
-                <a href="#" class="">
+                <a href="#landing" class="">
                     <span class="sr-only">Stack Overflowed</span>
                     <img class="h-5 w-auto" src="logo.svg" alt="">
                 </a>
             </div>
 
             <div class="hidden lg:flex lg:gap-x-8">
-                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Features</a>
-                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Testimonials</a>
-                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Pricing</a>
+                <a href="#features" class="text-sm text-gray-900">Features</a>
+                <a href="#usecases" class="text-sm text-gray-900">Use cases</a>
+                <a href="#pricing" class="text-sm text-gray-900">Pricing</a>
+                <a href="#faqs" class="text-sm text-gray-900">FAQs</a>
             </div>
         </nav>
     </header>
 
-    <section class="bg-stone-100">
+    <section class="bg-stone-100" id="landing">
         <div class="mx-auto max-w-7xl py-16 sm:py-16 px-6">
-            <h1 class="text-4xl text-center font-bold tracking-tight text-gray-900 font-serif sm:text-6xl">A therapy
-                hotline for <span class="text-orange-500">tech people</span></h1>
-            <p class="mt-6 text-center font-medium text-xl leading-8 text-stone-600">Free and private</p>
+            <h1
+                class="text-4xl text-center font-bold tracking-tight text-gray-900 font-serif sm:text-6xl leading-tight">
+                Free therapy for <span class="text-orange-500">tech employees</span></h1>
+            <p class="mt-6 text-center font-medium text-xl text-stone-600 leading-tight">Saving you from an existential
+                crisis, just on time for standup</p>
 
             {# <form class="gform space-y-6" method="POST" data-email={{ config.extra.email_address }} action={{
                 config.extra.form_script }}> #}
@@ -43,9 +60,9 @@
                             class="p-4 border-l-0 border border-gray-300 text-gray-900 text-md rounded-r-xl focus:ring-orange-500 focus:border-orange-500 block w-full"
                             placeholder="Your phone number" required>
                     </div>
-                    <textarea type="message" id="message" name="message" rows="1"
+                    <input type="message" id="message" name="message"
                         class="p-4 w-full text-md text-gray-900 rounded-xl border border-gray-300 focus:ring-orange-500 focus:border-orange-500"
-                        placeholder="What's up?" required></textarea>
+                        placeholder="What's up?" required>
                     <input type="text" id="movie" name="movie" placeholder="Gotcha!"
                         class="hidden p-2.5 w-full text-md text-gray-900 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500">
                     <button type="submit"
@@ -54,7 +71,7 @@
                         <i class="pl-1 iconoir-phone-income text-lg align-[-3px]" aria-hidden="true"></i>
                     </button>
                     <a
-                        class="block mx-auto w-full rounded-lg px-4 py-1.5 text-base leading-7 hover:text-gray-500 text-center">
+                        class="block mx-auto w-full rounded-lg px-4 py-1.5 text-base text-stone-600 leading-7 hover:text-stone-400 text-center">
                         Book later
                         <i class="pl-1 iconoir-calendar-plus text-lg align-[-3px]" aria-hidden="true"></i>
                     </a>
@@ -66,7 +83,7 @@
                             <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
                         </span>
                         <div class="pl-3 text-sm font-light text-stone-500">
-                            Current wait time is <span class="text-emerald-600 font-semibold">5 minutes</span>
+                            Current wait time is <span class="text-emerald-600 font-semibold">7 minutes</span>
                         </div>
                     </div>
 
@@ -104,15 +121,16 @@
         </div>
     </section>
 
-    <section class="bg-stone-200">
+    <section class="bg-stone-200" id="features">
         <div class="py-16 px-4 mx-auto max-w-screen-xl lg:py-32 lg:px-6 text-center">
-            <h2 class="mb-8 lg:mb-16 font-serif text-2xl lg:text-4xl tracking-tight font-extrabold text-gray-900">
-                Saving you from an existential crisis in time for standup</h2>
-            <div class="space-y-8 md:grid md:grid-cols-3 md:gap-12 md:space-y-0">
+            <h2
+                class="mb-8 lg:mb-16 font-serif text-2xl text-stone-700 md:text-4xl tracking-tight font-bold text-gray-900">
+                A free, private hotline to refactor your feelings</h2>
+            <div class="space-y-8 sm:grid sm:grid-cols-3 sm:gap-4 md:gap-12 sm:space-y-0">
                 <div>
-                    <div class="flex mx-auto justify-center items-center mb-4 w-6 h-6 rounded-full bg-emerald-500">
+                    <div class="flex mx-auto justify-center items-center mb-4 w-6 h-6 rounded-full bg-orange-500">
                         <!-- Icon -->
-                        <svg class="flex-shrink-0 w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"
+                        <svg class="flex-shrink-0 w-4 h-4 text-orange-100" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -124,9 +142,9 @@
                         demoralized techies. No strings attached here.</p>
                 </div>
                 <div>
-                    <div class="flex mx-auto justify-center items-center mb-4 w-6 h-6 rounded-full bg-emerald-500">
+                    <div class="flex mx-auto justify-center items-center mb-4 w-6 h-6 rounded-full bg-orange-500">
                         <!-- Icon -->
-                        <svg class="flex-shrink-0 w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"
+                        <svg class="flex-shrink-0 w-4 h-4 text-orange-100" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -138,9 +156,9 @@
                         want—we only ask that you respect your NDA.</p>
                 </div>
                 <div>
-                    <div class="flex mx-auto justify-center items-center mb-4 w-6 h-6 rounded-full bg-emerald-500">
+                    <div class="flex mx-auto justify-center items-center mb-4 w-6 h-6 rounded-full bg-orange-500">
                         <!-- Icon -->
-                        <svg class="flex-shrink-0 w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"
+                        <svg class="flex-shrink-0 w-4 h-4 text-orange-100" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -148,35 +166,39 @@
                         </svg>
                     </div>
                     <h3 class="mb-2 font-semibold">Effective</h3>
-                    <p class="text-gray-600">Speaking with someone who understands your frustrations on both a
-                        technical and spirtual level is quite the experience.</p>
+                    <p class="text-gray-600">Speaking to someone who understands your work problems, both technically
+                        and spiritually, is rarely free and anonymous.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="bg-stone-100">
+    <section class="bg-neutral-800" id="usecases">
         <div class="py-16 lg:py-32 px-6 max-w-7xl mx-auto">
             <div class="mx-auto items-center text-center pb-16">
-                <h2 class="text-2xl font-bold font-serif tracking-tight text-gray-900 lg:text-4xl">You have problems to
-                    vent about
+                <h2 class="text-2xl font-bold font-serif tracking-tight text-stone-100 md:text-4xl">Need to vent? Let's
+                    talk.
                 </h2>
-                <p class="mt-4 text-gray-500 text-lg">And we want to hear them
+                <p class="mt-4 text-gray-100 text-lg">No matter how petty or convoluted your problems are
                 </p>
             </div>
 
             <div class="pb-10">
-                <div class="grid grid-cols-1 gap-8">
+                <div class="grid grid-cols-1 gap-12 md:gap-8">
 
                     <!-- Feature 1 -->
                     <div class="flex flex-col-reverse md:flex-row md:gap-x-10 md:items-center">
-                        <div class="flex flex-row md:w-1/3">
-                            <div class="pr-4">
-                                <i class="iconoir-chat-bubble-error text-2xl align-[-3px] text-stone-700" aria-hidden="true"></i>
+                        <div class="flex md:w-1/3">
+                            <div class="pr-3 md:pr-4">
+                                <div
+                                    class="flex mx-auto justify-center items-center h-8 w-8 md:h-12 md:w-12 bg-yellow-500/70 rounded-full">
+                                    <i class="iconoir-chat-bubble-error text-lg md:text-2xl text-yellow-100"
+                                        aria-hidden="true"></i>
+                                </div>
                             </div>
-                            <div>
-                                <h2 class="font-semibold inline">Stakeholder management.&nbsp;</h2>
-                                <p class="text-md text-gray-500 inline">We all have that special somebody.</p>
+                            <div class="text-stone-100">
+                                <h2 class="font-bold mb-1">Stakeholder management</h2>
+                                <p class="text-md">We all have that special somebody</p>
                             </div>
                         </div>
                         <div class="md:w-2/3 mb-6 md:mb-0">
@@ -185,14 +207,18 @@
                     </div>
 
                     <!-- Feature 2 -->
-                    <div class="flex flex-col-reverse md:flex-row md:gap-x-10 md:items-center">
-                        <div class="flex flex-row md:w-1/3">
-                            <div class="pr-4">
-                                <i class="iconoir-server text-2xl align-[-3px] text-stone-700" aria-hidden="true"></i>
+                    <div class="flex flex-col-reverse md:flex-row md:gap-10 md:items-center">
+                        <div class="flex md:w-1/3">
+                            <div class="pr-3 md:pr-4">
+                                <div
+                                    class="flex mx-auto justify-center items-center h-8 w-8 md:h-12 md:w-12 bg-blue-500/70 rounded-full">
+                                    <i class="iconoir-server text-lg md:text-2xl text-blue-100" aria-hidden="true"></i>
+                                </div>
                             </div>
-                            <div class="">
-                                <h2 class="font-semibold inline">System design.&nbsp;</h2>
-                                <p class="text-md text-gray-500 inline">Sometimes you read something that makes you question if you can actually read.</p>
+                            <div class="text-stone-100">
+                                <h2 class="font-bold mb-1">System design</h2>
+                                <p class="text-md">When you read a technical document that makes
+                                    you question if you can actually read</p>
                             </div>
                         </div>
                         <div class="md:w-2/3 mb-6 md:mb-0">
@@ -202,13 +228,18 @@
 
                     <!-- Feature 3 -->
                     <div class="flex flex-col-reverse md:flex-row md:gap-x-10 md:items-center">
-                        <div class="flex flex-row md:w-1/3">
-                            <div class="pr-4">
-                                <i class="iconoir-strategy text-2xl align-[-3px] text-stone-700" aria-hidden="true"></i>
+                        <div class="flex md:w-1/3">
+                            <div class="pr-3 md:pr-4">
+                                <div
+                                    class="flex mx-auto justify-center items-center h-8 w-8 md:h-12 md:w-12 bg-purple-500/70 rounded-full">
+                                    <i class="iconoir-strategy text-lg md:text-2xl text-purple-100"
+                                        aria-hidden="true"></i>
+                                </div>
                             </div>
-                            <div class="">
-                                <h2 class="font-semibold inline">Business strategy.&nbsp;</h2>
-                                <p class="text-md text-gray-500 inline">Behind every poor corporate decision was somebody with an exceptionally bad idea.</p>
+                            <div class="text-stone-100">
+                                <h2 class="font-bold mb-1">Corporate strategy</h2>
+                                <p class="text-md">Behind every bad business decision was a
+                                    exceptional individual with a dumb idea</p>
                             </div>
                         </div>
                         <div class="md:w-2/3 mb-6 md:mb-0">
@@ -221,7 +252,7 @@
         </div>
     </section>
 
-    <section class="bg-stone-800">
+    <section class="bg-stone-200">
         <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-24 lg:px-6">
             <figure class="max-w-screen-md mx-auto">
                 <svg class="h-12 mx-auto mb-3 text-stone-400" viewBox="0 0 24 27" fill="none"
@@ -231,28 +262,29 @@
                         fill="currentColor" />
                 </svg>
                 <blockquote>
-                    <p class="text-lg lg:text-2xl font-serif text-stone-100">My girlfriend doesn't understand
-                        why I rant about my team's frequent outages. Sucks that I don't actually have a girlfriend.</p>
+                    <p class="text-lg md:text-2xl font-serif text-stone-800">My girlfriend doesn't understand
+                        why I rant about my team's frequent outages. But Stack Overflowed does!</p>
                 </blockquote>
-                <figcaption class="flex items-center justify-center mt-6 space-x-3">
+                <figcaption class="flex flex-col md:flex-row items-center justify-center mt-6 space-x-3">
                     <img class="w-10 h-10 rounded-full" src="dude.jpg" alt="profile picture">
-                    <div class="flex items-center divide-x-2 divide-stone-500">
-                        <div class="pr-3 font-semibold font-serif text-stone-100">Anonymous
+                    <div class="flex flex-col md:flex-row mt-4 md:mt-0 items-center md:divide-x-2 md:divide-stone-400">
+                        <div class="md:pr-3 font-semibold text-stone-800">Anonymous engineer
                         </div>
-                        <div class="pl-3 text-sm font-light text-stone-200">Software engineer</div>
+                        <div class="md:pl-3 text-sm text-stone-600">Doesn't have a girlfriend</div>
                     </div>
                 </figcaption>
+
             </figure>
         </div>
     </section>
 
-    <section class="bg-white">
+    <section class="bg-stone-100" id="pricing">
         <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
             <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-                <h2 class="mb-4 text-2xl lg:text-4xl tracking-tight font-extrabold text-gray-900 font-serif">
+                <h2
+                    class="mb-4 text-2xl text-stone-700 md:text-4xl tracking-tight font-bold text-gray-900 font-serif">
                     Plans and pricing</h2>
-                <p class="mb-5 font-light text-gray-500 sm:text-xl">Here's just a sample of who we
-                    help</p>
+                <p class="mb-5 font-light text-gray-500 sm:text-xl">We're free because you've already paid with your soul</p>
             </div>
 
             <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
@@ -261,150 +293,110 @@
                 <div
                     class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-stone-200 xl:p-8">
 
-                    <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+                    <div class="mb-4 sm:mb-8">
                         <div
-                            class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-stone-300">
-                            Newly added
+                            class="max-w-fit mx-auto relative rounded-full px-3 py-1 text-sm text-gray-600 ring-1 ring-stone-300">
+                            New
                         </div>
                     </div>
 
-                    <h3 class="mb-4 text-2xl font-semibold font-serif">Designer</h3>
+                    <h3 class="mb-4 text-lg md:text-2xl font-semibold font-serif">Designer</h3>
                     <p class="font-light text-gray-500 sm:text-lg">For the artist helplessly
                         watching their work being butchered</p>
                     <div class="flex justify-center items-baseline my-8">
-                        <span class="mr-2 text-5xl font-extrabold">$0</span>
+                        <span class="mr-1 text-3xl md:text-5xl text-stone-700 font-bold">$0.00</span>
                         <span class="text-gray-500">/month</span>
                     </div>
                     <!-- List -->
-                    <ul role="list" class="mb-8 space-y-4 text-left">
+                    <ul role="list" class="mb-8 space-y-4 text-left text-gray-600 lg:h-48">
                         <li class="flex items-center space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <span>Individual configuration</span>
+                            <i class="flex-shrink-0 w-5 h-5 text-emerald-500 iconoir-check text-2xl"
+                                aria-hidden="true"></i>
+                            <span>Not being taken seriously</span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <span>No setup, or hidden fees</span>
+                            <i class="flex-shrink-0 w-5 h-5 text-emerald-500 iconoir-check text-2xl"
+                                aria-hidden="true"></i>
+                            <span>Only person in office that showers</span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <span>Team size: <span class="font-semibold">100+ developers</span></span>
+                            <i class="flex-shrink-0 w-5 h-5 text-emerald-500 iconoir-check text-2xl"
+                                aria-hidden="true"></i>
+                            <span>Nobody else cares about fonts</span></span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <span>Premium support: <span class="font-semibold">36 months</span></span>
+                            <i class="flex-shrink-0 w-5 h-5 text-emerald-500 iconoir-check text-2xl"
+                                aria-hidden="true"></i>
+                            <span>Need to touch Adobe software</span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <span>Free updates: <span class="font-semibold">36 months</span></span>
+                            <i class="flex-shrink-0 w-5 h-5 text-emerald-500 iconoir-check text-2xl"
+                                aria-hidden="true"></i>
+                            <span>Getting pestered by PMs</span></span>
                         </li>
                     </ul>
-                    <a href="#"
-                        class="text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center :ring-orange-900">Get
+                    <a href="#landing"
+                        class="text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg px-5 py-2.5 text-center :ring-orange-900">Get
                         started</a>
                 </div>
                 <!-- Pricing Card -->
                 <div
                     class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-stone-200 xl:p-8">
 
-                    <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+                    <div class="mb-4 sm:mb-8">
                         <div
-                            class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-stone-300">
+                            class="max-w-fit mx-auto relative rounded-full px-3 py-1 text-sm text-gray-600 ring-1 ring-stone-300">
                             Popular
                         </div>
                     </div>
 
-                    <h3 class="mb-4 text-2xl font-semibold font-serif">Software engineer</h3>
-                    <p class="font-light text-gray-500 sm:text-lg">For the developer hopelessly
-                        wrestling a 400-line <span class="font-mono">package.json</span></p>
+                    <h3 class="mb-4 text-lg md:text-2xl font-semibold font-serif">Software engineer</h3>
+                    <p class="font-light text-gray-500 sm:text-lg">For the developer desperately
+                        wrestling a segfault for three hours</p>
                     <div class="flex justify-center items-baseline my-8">
-                        <span class="mr-2 text-5xl font-extrabold">$0</span>
+                        <span class="mr-1 text-3xl md:text-5xl text-stone-700 font-bold">$0.00</span>
                         <span class="text-gray-500">/month</span>
                     </div>
                     <!-- List -->
-                    <ul role="list" class="mb-8 space-y-4 text-left">
+                    <ul role="list" class="mb-8 space-y-4 text-left text-gray-600 lg:h-48">
                         <li class="flex items-center space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <span>Individual configuration</span>
+                            <i class="flex-shrink-0 w-5 h-5 text-emerald-500 iconoir-check text-2xl"
+                                aria-hidden="true"></i>
+                            <span>Slow compilation times</span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <span>No setup, or hidden fees</span>
+                            <i class="flex-shrink-0 w-5 h-5 text-emerald-500 iconoir-check text-2xl"
+                                aria-hidden="true"></i>
+                            <span>Disorderly documentation</span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <span>Team size: <span class="font-semibold">1 developer</span></span>
+                            <i class="flex-shrink-0 w-5 h-5 text-emerald-500 iconoir-check text-2xl"
+                                aria-hidden="true"></i>
+                            <span>Unresponsive teammates</span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <span>Premium support: <span class="font-semibold">6 months</span></span>
+                            <i class="flex-shrink-0 w-5 h-5 text-emerald-500 iconoir-check text-2xl"
+                                aria-hidden="true"></i>
+                            <span>Single</span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <span>Free updates: <span class="font-semibold">6 months</span></span>
+                            <i class="flex-shrink-0 w-5 h-5 text-emerald-500 iconoir-check text-2xl"
+                                aria-hidden="true"></i>
+                            <span>Getting pestered by PMs</span>
                         </li>
                     </ul>
-                    <a href="#"
-                        class="text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center :ring-orange-900">Get
+                    <a href="#landing"
+                        class="text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg px-5 py-2.5 text-center :ring-orange-900">Get
                         started</a>
                 </div>
                 <!-- Pricing Card -->
@@ -412,76 +404,56 @@
                 <div
                     class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-stone-200 xl:p-8">
 
-                    <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+                    <div class="mb-4 sm:mb-8">
                         <div
-                            class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-stone-300">
-                            We needed a third category
+                            class="max-w-fit mx-auto relative rounded-full px-3 py-1 text-sm text-gray-600 ring-1 ring-stone-300">
+                            Unpopular
                         </div>
                     </div>
 
-                    <h3 class="mb-4 text-2xl font-semibold font-serif">Product manager</h3>
+                    <h3 class="mb-4 text-lg md:text-2xl font-semibold font-serif">Product manager</h3>
 
                     <p class="font-light text-gray-500 sm:text-lg">For the product manager attending
                         six back-to-back Monday meetings</p>
                     <div class="flex justify-center items-baseline my-8">
-                        <span class="mr-2 text-5xl font-extrabold">$0</span>
+                        <span class="mr-1 text-3xl md:text-5xl text-stone-700 font-bold">$0.00</span>
                         <span class="text-gray-500">/month</span>
                     </div>
                     <!-- List -->
-                    <ul role="list" class="mb-8 space-y-4 text-left">
+                    <ul role="list" class="mb-8 space-y-4 text-left text-gray-600 lg:h-48">
                         <li class="flex items-center space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <span>Individual configuration</span>
+                            <i class="flex-shrink-0 w-5 h-5 text-emerald-500 iconoir-check text-2xl"
+                                aria-hidden="true"></i>
+                            <span>Blamed for all product failures</span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <span>No setup, or hidden fees</span>
+                            <i class="flex-shrink-0 w-5 h-5 text-emerald-500 iconoir-check text-2xl"
+                                aria-hidden="true"></i>
+                            <span>Mundane busywork</span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <span>Team size: <span class="font-semibold">10 developers</span></span>
+                            <i class="flex-shrink-0 w-5 h-5 text-emerald-500 iconoir-check text-2xl"
+                                aria-hidden="true"></i>
+                            <span>Weak stakeholder influence</span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <span>Premium support: <span class="font-semibold">24 months</span></span>
+                            <i class="flex-shrink-0 w-5 h-5 text-emerald-500 iconoir-check text-2xl"
+                                aria-hidden="true"></i>
+                            <span>Being seen as the enemy</span></span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <span>Free updates: <span class="font-semibold">24 months</span></span>
+                            <i class="flex-shrink-0 w-5 h-5 text-emerald-500 iconoir-check text-2xl"
+                                aria-hidden="true"></i>
+                            <span>Getting pestered by customers</span></span>
                         </li>
                     </ul>
-                    <a href="#"
-                        class="text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center :ring-orange-900">Get
+                    <a href="#landing"
+                        class="text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg px-5 py-2.5 text-center :ring-orange-900">Get
                         started</a>
                 </div>
 
@@ -489,10 +461,10 @@
         </div>
     </section>
 
-    <section class="bg-white">
+    <section class="bg-white" id="faqs">
         <div class="py-16 lg:py-32 px-6 mx-auto max-w-7xl">
             <div class="mx-auto items-center text-center pb-16">
-                <h2 class="text-2xl font-bold font-serif tracking-tight text-gray-900 lg:text-4xl">Frequently asked
+                <h2 class="text-2xl font-bold font-serif tracking-tight text-stone-700 md:text-4xl">Frequently asked
                     questions
                 </h2>
             </div>
@@ -501,60 +473,67 @@
                 <div class="grid grid-cols-1 gap-8">
 
                     <!-- Feature 1 -->
-                    <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b pb-8">
+                    <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b md:pb-8">
                         <div class="md:w-1/3">
                             <h2 class="font-semibold mb-2">Why do you need my phone number?</h2>
                         </div>
                         <div class="md:w-2/3 mb-6 md:mb-0">
-                            <p class="text-md text-gray-500">This is the easiest way for us to coordinate who should respond.</p>
+                            <p class="text-md text-gray-600">This is the easiest way for us to coordinate who should
+                                respond.</p>
                         </div>
                     </div>
 
-                    <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b pb-8">
+                    <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b md:pb-8">
                         <div class="md:w-1/3">
                             <h2 class="font-semibold mb-2">What's the catch here?</h2>
                         </div>
                         <div class="md:w-2/3 mb-6 md:mb-0">
-                            <p class="text-md text-gray-500">There isn't one. We don't record, store, or sell any personally identifable information about you or what you say.</p>
+                            <p class="text-md text-gray-600">We're researchers harvesting your voice
+                                data so we can build better deepfake tools. Just kidding! We don't record, store, or
+                                sell any
+                                personally identifable information about you or what you say.</p>
                         </div>
                     </div>
 
-                    <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b pb-8">
+                    <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b md:pb-8">
                         <div class="md:w-1/3">
                             <h2 class="font-semibold mb-2">Who are you?</h2>
                         </div>
                         <div class="md:w-2/3 mb-6 md:mb-0">
-                            <p class="text-md text-gray-500">We're ordinary tech employees who want to do something fun.</p>
+                            <p class="text-md text-gray-600">We're ordinary tech employees who
+                                believe that simple, candid conversations can help us solve—or at least cope with—the
+                                problems unique to our industry.</p>
                         </div>
                     </div>
 
                     <!-- Feature 2 -->
-                    <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b pb-8">
+                    <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b md:pb-8">
                         <div class="md:w-1/3">
                             <h2 class="font-semibold mb-2">Is this affilated with Stack Overflow?</h2>
                         </div>
                         <div class="md:w-2/3 mb-6 md:mb-0">
-                            <p class="text-md text-gray-500">No.</p>
+                            <p class="text-md text-gray-600">No.</p>
                         </div>
                     </div>
 
                     <!-- Feature 3 -->
-                    <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b pb-8">
+                    <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b md:pb-8">
                         <div class="md:w-1/3">
-                            <h2 class="font-semibold mb-2">Are even you allowed to use the name Stack Overflowed?</h2>
+                            <h2 class="font-semibold mb-2">Are you even allowed to use the name Stack Overflowed?</h2>
                         </div>
                         <div class="md:w-2/3 mb-6 md:mb-0">
-                            <p class="text-md text-gray-500">We hope so.</p>
+                            <p class="text-md text-gray-600">We hope so.</p>
                         </div>
                     </div>
 
                     <!-- Feature 3 -->
-                    <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b pb-8">
+                    <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b md:pb-8">
                         <div class="md:w-1/3">
                             <h2 class="font-semibold mb-2">How can I become a volunteer for the hotline?</h2>
                         </div>
                         <div class="md:w-2/3 mb-6 md:mb-0">
-                            <p class="text-md text-gray-500">Please fill out this interest form. We aren't able to respond to everybody, but we try to get in touch with as many people as we can.</p>
+                            <p class="text-md text-gray-600">Please fill out this interest form. We aren't able to
+                                respond to everybody, but we try to get in touch with as many people as we can.</p>
                         </div>
                     </div>
                 </div>
@@ -566,30 +545,19 @@
         <div class="mx-auto max-w-7xl px-6 py-6">
             <div class="md:flex md:justify-between">
                 <div class="mb-6 md:mb-0">
-                    <a href="https://flowbite.com" class="flex items-center">
+                    <a href="/" class="flex items-center">
                         <img src="logo.svg" class="mr-2 h-5" />
                     </a>
                 </div>
-                <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                <div class="grid grid-cols-2 gap-6">
                     <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Resources</h2>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Contact us</h2>
                         <ul class="text-gray-600">
                             <li class="mb-4">
-                                <a href="https://flowbite.com" class="hover:underline">Flowbite</a>
+                                <a href="/" class="hover:underline">Feedback</a>
                             </li>
                             <li>
-                                <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Follow us</h2>
-                        <ul class="text-gray-600">
-                            <li class="mb-4">
-                                <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
-                            </li>
-                            <li>
-                                <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>
+                                <a href="/" class="hover:underline">Business</a>
                             </li>
                         </ul>
                     </div>
@@ -597,10 +565,10 @@
                         <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Legal</h2>
                         <ul class="text-gray-600">
                             <li class="mb-4">
-                                <a href="#" class="hover:underline">Privacy Policy</a>
+                                <a href="/" class="hover:underline">Privacy Policy</a>
                             </li>
                             <li>
-                                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                                <a href="/" class="hover:underline">Terms &amp; Conditions</a>
                             </li>
                         </ul>
                     </div>
@@ -611,12 +579,14 @@
                 Made with love and rage
             </div>
             <div class="sm:flex mt-4 sm:items-center sm:justify-between">
-                <span class="text-sm text-gray-500 sm:text-center">© 2023 <a href="https://flowbite.com"
-                        class="hover:underline">Stack Overflowed</a>.
+                <span class="text-sm text-gray-500 sm:text-center"><a href="/" class="hover:underline">Stack
+                        Overflowed</a>, 2023
                 </span>
             </div>
         </div>
     </footer>
 </body>
+
+<script data-goatcounter="https://tassel3090.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 </html>
