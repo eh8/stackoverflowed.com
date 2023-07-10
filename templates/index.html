@@ -45,7 +45,7 @@
             <h1
                 class="text-4xl text-center font-bold tracking-tight text-gray-900 font-serif sm:text-6xl leading-tight">
                 Free therapy for <span class="text-orange-500">tech employees</span></h1>
-            <p class="mt-6 text-center font-medium text-xl text-stone-600 leading-tight">Saving you from an existential
+            <p class="mt-6 text-center text-lg text-stone-600">Saving you from an existential
                 crisis, just on time for standup</p>
 
             {# <form class="gform space-y-6" method="POST" data-email={{ config.extra.email_address }} action={{
@@ -53,25 +53,25 @@
                 <form class="gform mx-auto space-y-4 mt-10 max-w-sm">
                     <div class="inline-flex w-full" role="group">
                         <button
-                            class="p-4 text-sm font-medium text-gray-600 bg-gray-100 border border-gray-300 rounded-l-xl font-mono">
+                            class="p-2 px-4 md:p-4 text-md font-medium text-gray-500 bg-gray-100 border border-gray-300 rounded-l-xl font-mono">
                             +1
                         </button>
                         <input type="tel" id="phone_number" name="phone_number"
-                            class="p-4 border-l-0 border border-gray-300 text-gray-900 text-md rounded-r-xl focus:ring-orange-500 focus:border-orange-500 block w-full"
+                            class="py-2 px-4 md:p-4 border-l-0 border border-gray-300 text-gray-900 text-md rounded-r-xl block w-full"
                             placeholder="Your phone number" required>
                     </div>
                     <input type="message" id="message" name="message"
-                        class="p-4 w-full text-md text-gray-900 rounded-xl border border-gray-300 focus:ring-orange-500 focus:border-orange-500"
+                        class="py-2 px-4 md:p-4 w-full text-md text-gray-900 rounded-xl border border-gray-300 "
                         placeholder="What's up?" required>
                     <input type="text" id="movie" name="movie" placeholder="Gotcha!"
-                        class="hidden p-2.5 w-full text-md text-gray-900 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500">
+                        class="hidden p-2.5 w-full text-md text-gray-900 rounded-xl border border-gray-300">
                     <button type="submit"
-                        class="block mx-auto w-full rounded-lg bg-orange-500 px-4 py-1.5 text-base leading-7 text-white hover:bg-orange-600">
+                        class="block mx-auto w-full rounded-xl bg-orange-500 px-4 py-1.5 text-base leading-7 text-white hover:bg-orange-600">
                         Call me now
                         <i class="pl-1 iconoir-phone-income text-lg align-[-3px]" aria-hidden="true"></i>
                     </button>
                     <a
-                        class="block mx-auto w-full rounded-lg px-4 py-1.5 text-base text-stone-600 leading-7 hover:text-stone-400 text-center">
+                        class="block mx-auto w-full rounded-xl px-4 py-1.5 text-base text-stone-600 leading-7 hover:text-stone-400 text-center">
                         Book later
                         <i class="pl-1 iconoir-calendar-plus text-lg align-[-3px]" aria-hidden="true"></i>
                     </a>
@@ -79,8 +79,8 @@
                     <div class="flex items-center justify-center">
                         <span class="relative flex h-3 w-3">
                             <span
-                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                                class="animate-ping absolute inline-flex h-full w-full rounded-xl bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-xl h-3 w-3 bg-emerald-500"></span>
                         </span>
                         <div class="pl-3 text-sm font-light text-stone-500">
                             Current wait time is <span class="text-emerald-600 font-semibold">7 minutes</span>
@@ -98,7 +98,7 @@
 
     <section class="bg-stone-100">
         <div class="mx-auto max-w-7xl py-16 px-6 lg:px-8 text-center">
-            <div class="mb-2 text-stone-600 text-lg">Our users may or may not work at these lovely places</div>
+            <div class="mb-2 text-stone-600 text-sm">Our users may or may not work here</div>
 
             <div
                 class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
@@ -122,15 +122,15 @@
     </section>
 
     <section class="bg-stone-200" id="features">
-        <div class="py-16 px-4 mx-auto max-w-screen-xl lg:py-32 lg:px-6 text-center">
+        <div class="py-16 px-4 mx-auto max-w-screen-xl lg:py-24 lg:px-6 text-center">
             <h2
-                class="mb-8 lg:mb-16 font-serif text-2xl text-stone-700 md:text-4xl tracking-tight font-bold text-gray-900">
+                class="mb-8 lg:mb-16 font-serif text-3xl text-stone-700 md:text-4xl tracking-tight font-bold text-gray-900">
                 A free, private hotline to refactor your feelings</h2>
             <div class="space-y-8 sm:grid sm:grid-cols-3 sm:gap-4 md:gap-12 sm:space-y-0">
                 <div>
-                    <div class="flex mx-auto justify-center items-center mb-4 w-6 h-6 rounded-full bg-orange-500">
+                    <div class="flex mx-auto justify-center items-center mb-2 w-6 h-6 rounded-full bg-emerald-500">
                         <!-- Icon -->
-                        <svg class="flex-shrink-0 w-4 h-4 text-orange-100" fill="currentColor" viewBox="0 0 20 20"
+                        <svg class="flex-shrink-0 w-4 h-4 text-emerald-100" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -142,9 +142,9 @@
                         demoralized techies. No strings attached here.</p>
                 </div>
                 <div>
-                    <div class="flex mx-auto justify-center items-center mb-4 w-6 h-6 rounded-full bg-orange-500">
+                    <div class="flex mx-auto justify-center items-center mb-2 w-6 h-6 rounded-full bg-emerald-500">
                         <!-- Icon -->
-                        <svg class="flex-shrink-0 w-4 h-4 text-orange-100" fill="currentColor" viewBox="0 0 20 20"
+                        <svg class="flex-shrink-0 w-4 h-4 text-emerald-100" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -156,9 +156,9 @@
                         want—we only ask that you respect your NDA.</p>
                 </div>
                 <div>
-                    <div class="flex mx-auto justify-center items-center mb-4 w-6 h-6 rounded-full bg-orange-500">
+                    <div class="flex mx-auto justify-center items-center mb-2 w-6 h-6 rounded-full bg-emerald-500">
                         <!-- Icon -->
-                        <svg class="flex-shrink-0 w-4 h-4 text-orange-100" fill="currentColor" viewBox="0 0 20 20"
+                        <svg class="flex-shrink-0 w-4 h-4 text-emerald-100" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -173,13 +173,13 @@
         </div>
     </section>
 
-    <section class="bg-neutral-800" id="usecases">
-        <div class="py-16 lg:py-32 px-6 max-w-7xl mx-auto">
+    <section class="bg-stone-300" id="usecases">
+        <div class="py-16 lg:py-24 px-6 max-w-7xl mx-auto">
             <div class="mx-auto items-center text-center pb-16">
-                <h2 class="text-2xl font-bold font-serif tracking-tight text-stone-100 md:text-4xl">Need to vent? Let's
+                <h2 class="text-3xl font-bold font-serif tracking-tight text-stone-700 md:text-4xl">Need to vent? Let's
                     talk.
                 </h2>
-                <p class="mt-4 text-gray-100 text-lg">No matter how petty or convoluted your problems are
+                <p class="mt-4 text-stone-600 text-lg">No matter how petty or convoluted your problems are
                 </p>
             </div>
 
@@ -191,18 +191,18 @@
                         <div class="flex md:w-1/3">
                             <div class="pr-3 md:pr-4">
                                 <div
-                                    class="flex mx-auto justify-center items-center h-8 w-8 md:h-12 md:w-12 bg-yellow-500/70 rounded-full">
-                                    <i class="iconoir-chat-bubble-error text-lg md:text-2xl text-yellow-100"
+                                    class="flex mx-auto justify-center items-center h-8 w-8 sm:h-12 sm:w-12 bg-green-800 rounded-xl">
+                                    <i class="iconoir-chat-bubble-error text-lg md:text-2xl text-green-300"
                                         aria-hidden="true"></i>
                                 </div>
                             </div>
-                            <div class="text-stone-100">
+                            <div class="text-stone-700">
                                 <h2 class="font-bold mb-1">Stakeholder management</h2>
                                 <p class="text-md">We all have that special somebody</p>
                             </div>
                         </div>
                         <div class="md:w-2/3 mb-6 md:mb-0">
-                            <img src="coworker.png" alt="Feature 1 Image" class="w-full rounded-xl">
+                            <img src="coworker.png" alt="Feature 1 Image" class="w-full rounded-2xl">
                         </div>
                     </div>
 
@@ -211,18 +211,18 @@
                         <div class="flex md:w-1/3">
                             <div class="pr-3 md:pr-4">
                                 <div
-                                    class="flex mx-auto justify-center items-center h-8 w-8 md:h-12 md:w-12 bg-blue-500/70 rounded-full">
-                                    <i class="iconoir-server text-lg md:text-2xl text-blue-100" aria-hidden="true"></i>
+                                    class="flex mx-auto justify-center items-center h-8 w-8 sm:h-12 sm:w-12 bg-purple-800 rounded-xl">
+                                    <i class="iconoir-server text-lg md:text-2xl text-purple-300" aria-hidden="true"></i>
                                 </div>
                             </div>
-                            <div class="text-stone-100">
+                            <div class="text-stone-700">
                                 <h2 class="font-bold mb-1">System design</h2>
-                                <p class="text-md">When you read a technical document that makes
+                                <p class="text-md">When you read bad documentation that makes
                                     you question if you can actually read</p>
                             </div>
                         </div>
                         <div class="md:w-2/3 mb-6 md:mb-0">
-                            <img src="complex.png" alt="Feature 2 Image" class="w-full rounded-xl">
+                            <img src="complex.png" alt="Feature 2 Image" class="w-full rounded-2xl">
                         </div>
                     </div>
 
@@ -231,19 +231,19 @@
                         <div class="flex md:w-1/3">
                             <div class="pr-3 md:pr-4">
                                 <div
-                                    class="flex mx-auto justify-center items-center h-8 w-8 md:h-12 md:w-12 bg-purple-500/70 rounded-full">
-                                    <i class="iconoir-strategy text-lg md:text-2xl text-purple-100"
+                                    class="flex mx-auto justify-center items-center h-8 w-8 sm:h-12 sm:w-12 bg-blue-800 rounded-xl">
+                                    <i class="iconoir-strategy text-lg md:text-2xl text-blue-300"
                                         aria-hidden="true"></i>
                                 </div>
                             </div>
-                            <div class="text-stone-100">
+                            <div class="text-stone-700">
                                 <h2 class="font-bold mb-1">Corporate strategy</h2>
                                 <p class="text-md">Behind every bad business decision was a
                                     exceptional individual with a dumb idea</p>
                             </div>
                         </div>
                         <div class="md:w-2/3 mb-6 md:mb-0">
-                            <img src="features.png" alt="Feature 3 Image" class="w-full rounded-xl">
+                            <img src="features.png" alt="Feature 3 Image" class="w-full rounded-2xl">
                         </div>
                     </div>
 
@@ -253,24 +253,24 @@
     </section>
 
     <section class="bg-stone-200">
-        <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-24 lg:px-6">
+        <div class="max-w-screen-xl px-4 py-16 mx-auto text-center lg:py-24 lg:px-6">
             <figure class="max-w-screen-md mx-auto">
-                <svg class="h-12 mx-auto mb-3 text-stone-400" viewBox="0 0 24 27" fill="none"
+                <svg class="h-8 sm:h-12 mx-auto mb-3 text-stone-400" viewBox="0 0 24 27" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
                         fill="currentColor" />
                 </svg>
                 <blockquote>
-                    <p class="text-lg md:text-2xl font-serif text-stone-800">My girlfriend doesn't understand
+                    <p class="text-xl md:text-2xl font-serif text-stone-800 tracking-tight">My girlfriend doesn't understand
                         why I rant about my team's frequent outages. But Stack Overflowed does!</p>
                 </blockquote>
                 <figcaption class="flex flex-col md:flex-row items-center justify-center mt-6 space-x-3">
-                    <img class="w-10 h-10 rounded-full" src="dude.jpg" alt="profile picture">
-                    <div class="flex flex-col md:flex-row mt-4 md:mt-0 items-center md:divide-x-2 md:divide-stone-400">
+                    <img class="w-10 h-10 rounded-xl" src="dude.jpg" alt="profile picture">
+                    <div class="flex flex-col md:flex-row mt-1 md:mt-0 items-center md:divide-x-2 md:divide-stone-400">
                         <div class="md:pr-3 font-semibold text-stone-800">Anonymous engineer
                         </div>
-                        <div class="md:pl-3 text-sm text-stone-600">Doesn't have a girlfriend</div>
+                        <div class="md:pl-3 text-sm mt-1 text-stone-600">Doesn't actually have a girlfriend</div>
                     </div>
                 </figcaption>
 
@@ -279,10 +279,10 @@
     </section>
 
     <section class="bg-stone-100" id="pricing">
-        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <div class="py-16 px-6 mx-auto max-w-screen-xl lg:py-24">
             <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
                 <h2
-                    class="mb-4 text-2xl text-stone-700 md:text-4xl tracking-tight font-bold text-gray-900 font-serif">
+                    class="mb-4 text-3xl text-stone-700 md:text-4xl tracking-tight font-bold font-serif">
                     Plans and pricing</h2>
                 <p class="mb-5 font-light text-gray-500 sm:text-xl">We're free because you've already paid with your soul</p>
             </div>
@@ -291,20 +291,20 @@
 
                 <!-- Pricing Card -->
                 <div
-                    class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-stone-200 xl:p-8">
+                    class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-3xl hover:shadow-xl ease-in duration-100 border border-stone-200 xl:p-8">
 
                     <div class="mb-4 sm:mb-8">
                         <div
-                            class="max-w-fit mx-auto relative rounded-full px-3 py-1 text-sm text-gray-600 ring-1 ring-stone-300">
+                            class="max-w-fit mx-auto relative rounded-xl px-3 py-1 text-sm text-gray-600 ring-1 ring-stone-300">
                             New
                         </div>
                     </div>
 
-                    <h3 class="mb-4 text-lg md:text-2xl font-semibold font-serif">Designer</h3>
+                    <h3 class="mb-4 text-xl md:text-2xl font-semibold font-serif">Designer</h3>
                     <p class="font-light text-gray-500 sm:text-lg">For the artist helplessly
                         watching their work being butchered</p>
                     <div class="flex justify-center items-baseline my-8">
-                        <span class="mr-1 text-3xl md:text-5xl text-stone-700 font-bold">$0.00</span>
+                        <span class="mr-1 text-3xl md:text-5xl text-stone-700 font-bold">$0</span>
                         <span class="text-gray-500">/month</span>
                     </div>
                     <!-- List -->
@@ -346,20 +346,20 @@
                 </div>
                 <!-- Pricing Card -->
                 <div
-                    class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-stone-200 xl:p-8">
+                    class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-3xl hover:shadow-xl ease-in duration-100 border border-stone-200 xl:p-8">
 
                     <div class="mb-4 sm:mb-8">
                         <div
-                            class="max-w-fit mx-auto relative rounded-full px-3 py-1 text-sm text-gray-600 ring-1 ring-stone-300">
+                            class="max-w-fit mx-auto relative rounded-xl px-3 py-1 text-sm text-gray-600 ring-1 ring-stone-300">
                             Popular
                         </div>
                     </div>
 
-                    <h3 class="mb-4 text-lg md:text-2xl font-semibold font-serif">Software engineer</h3>
+                    <h3 class="mb-4 text-xl md:text-2xl font-semibold font-serif">Software engineer</h3>
                     <p class="font-light text-gray-500 sm:text-lg">For the developer desperately
                         wrestling a segfault for three hours</p>
                     <div class="flex justify-center items-baseline my-8">
-                        <span class="mr-1 text-3xl md:text-5xl text-stone-700 font-bold">$0.00</span>
+                        <span class="mr-1 text-3xl md:text-5xl text-stone-700 font-bold">$0</span>
                         <span class="text-gray-500">/month</span>
                     </div>
                     <!-- List -->
@@ -402,21 +402,21 @@
                 <!-- Pricing Card -->
 
                 <div
-                    class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-stone-200 xl:p-8">
+                    class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-3xl hover:shadow-xl ease-in duration-100 border border-stone-200 xl:p-8">
 
                     <div class="mb-4 sm:mb-8">
                         <div
-                            class="max-w-fit mx-auto relative rounded-full px-3 py-1 text-sm text-gray-600 ring-1 ring-stone-300">
+                            class="max-w-fit mx-auto relative rounded-xl px-3 py-1 text-sm text-gray-600 ring-1 ring-stone-300">
                             Unpopular
                         </div>
                     </div>
 
-                    <h3 class="mb-4 text-lg md:text-2xl font-semibold font-serif">Product manager</h3>
+                    <h3 class="mb-4 text-xl md:text-2xl font-semibold font-serif">Product manager</h3>
 
                     <p class="font-light text-gray-500 sm:text-lg">For the product manager attending
                         six back-to-back Monday meetings</p>
                     <div class="flex justify-center items-baseline my-8">
-                        <span class="mr-1 text-3xl md:text-5xl text-stone-700 font-bold">$0.00</span>
+                        <span class="mr-1 text-3xl md:text-5xl text-stone-700 font-bold">$0</span>
                         <span class="text-gray-500">/month</span>
                     </div>
                     <!-- List -->
@@ -464,7 +464,7 @@
     <section class="bg-white" id="faqs">
         <div class="py-16 lg:py-32 px-6 mx-auto max-w-7xl">
             <div class="mx-auto items-center text-center pb-16">
-                <h2 class="text-2xl font-bold font-serif tracking-tight text-stone-700 md:text-4xl">Frequently asked
+                <h2 class="text-3xl font-bold font-serif tracking-tight text-stone-700 md:text-4xl">Frequently asked
                     questions
                 </h2>
             </div>
@@ -542,49 +542,25 @@
     </section>
 
     <footer class="bg-white">
-        <div class="mx-auto max-w-7xl px-6 py-6">
-            <div class="md:flex md:justify-between">
-                <div class="mb-6 md:mb-0">
-                    <a href="/" class="flex items-center">
-                        <img src="logo.svg" class="mr-2 h-5" />
-                    </a>
-                </div>
-                <div class="grid grid-cols-2 gap-6">
-                    <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Contact us</h2>
-                        <ul class="text-gray-600">
-                            <li class="mb-4">
-                                <a href="/" class="hover:underline">Feedback</a>
-                            </li>
-                            <li>
-                                <a href="/" class="hover:underline">Business</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Legal</h2>
-                        <ul class="text-gray-600">
-                            <li class="mb-4">
-                                <a href="/" class="hover:underline">Privacy Policy</a>
-                            </li>
-                            <li>
-                                <a href="/" class="hover:underline">Terms &amp; Conditions</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
-            <div class="text-sm text-gray-500">
-                Made with love and rage
-            </div>
-            <div class="sm:flex mt-4 sm:items-center sm:justify-between">
-                <span class="text-sm text-gray-500 sm:text-center"><a href="/" class="hover:underline">Stack
-                        Overflowed</a>, 2023
-                </span>
-            </div>
+        <div class="p-6 mx-auto max-w-screen-xl text-center">
+            <a href="#" class="flex justify-center items-center text-2xl font-semibold text-gray-900">
+                <img class="mr-2 h-6" src="logo.svg" />  
+            </a>
+            <p class="my-6 text-stone-500 text-sm">Saving you from an existential crisis, just on time for standup</p>
+            <ul class="flex flex-wrap justify-center items-center mb-6 text-stone-600 text-sm md:divide-x-2 md:divide-stone-300">
+                <li>
+                    <a href="#" class="px-4 hover:underline md:px-6">Contact us</a>
+                </li>
+                <li>
+                    <a href="#" class="px-4 hover:underline md:px-6">Privacy policy</a>
+                </li>
+                <li>
+                    <a href="#" class="px-4 hover:underline md:px-6">Terms and conditions</a>
+                </li>
+            </ul>
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="#" class="hover:underline">Stack Overflowed</a>. All Rights Reserved.</span>
         </div>
-    </footer>
+      </footer>
 </body>
 
 <script data-goatcounter="https://tassel3090.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
