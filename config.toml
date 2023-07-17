@@ -21,4 +21,4 @@ highlight_code = true
 # Put all your custom variables here
 ogimage = "favicons/ogimage.png"
 email_address = "info@stackoverflowed.com"
-form_script = "https://script.google.com/macros/s/AKfycbziv7gL7nzrWVGIeYCerUSUOa7dzMTgDCQZTf-xPVc0-t1fekf9KpQ2aEkk-tCLLYB9VQ/exec"
+form_script = "https://script.google.com/macros/s/AKfycbwUt4PwuCD4xrj64dNlUmec4QXe288qi2E4z5VEoiTDfZxC8LxJ1aSkFApyjXcFWToDXw/exec"
