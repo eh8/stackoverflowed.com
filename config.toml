@@ -1,6 +1,7 @@
 # The URL the site will be built for
 base_url = "https://stackoverflowed.com"
 title = "Stack Overflowed - Where Developers Vent"
+description = "Stack Overflowed has nothing to do with Stack Overflow."
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -18,3 +19,4 @@ highlight_code = true
 
 [extra]
 # Put all your custom variables here
+ogimage = "favicons/ogimage.png"
