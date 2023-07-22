@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+{% block title %}Thanks - {{ config.title }}{% endblock title %}
+
+{% block content %}
+
+<section class="bg-blue-500 flex h-screen pt-24">
+    <article class="max-w-screen-xl mx-auto prose prose-stone p-6">
+        <div class="md:w-2/3">
+            <h1 class="tracking-tighter text-9xl font-light text-white">:)</h1>
+            <p class="text-xl sm:text-2xl text-white">Your emotional support request is being assigned to
+                a volunteer. We're just collecting some info about your vibes, and then we'll call you
+                shortly.</p>
+
+            <p class="text-xl sm:text-2xl text-white"><span id="magic">0</span>% complete</p>
+
+            <div class="hidden sm:flex flex-row space-x-4 mt-16">
+                <div>
+                    <img src="qr.svg" class="h-24 sm:h-36 mt-0" />
+                </div>
+                <div>
+                    <p class="text-sm text-white mt-0 pt-0">Try improving your vibes by with one of those fancy breathing exercises</p>
+
+                    <p class="text-sm text-white">Maybe refill your water bottle and try stretching while
+                        you're at it</p>
+
+                    <p class="text-sm text-white">Don't want to move? At least fix your poor posture as you blanky stare at this
+                        screen</p>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>
+
+<script>
+    let num = 0;
+
+    function updateNumber() {
+        const delta = Math.random() > 0.51 ? 10 : -10;
+        num += delta;
+        document.getElementById('magic').innerText = num;
+    }
+
+    setInterval(updateNumber, 4000);
+</script>
+
+{% endblock content %}
