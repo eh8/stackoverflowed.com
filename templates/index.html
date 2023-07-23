@@ -123,7 +123,9 @@
                         <span class="relative inline-flex rounded-xl h-3 w-3 bg-emerald-500"></span>
                     </span>
                     <div class="pl-3 text-sm font-light text-stone-500">
-                        Current wait time is <span class="text-emerald-600 font-semibold">27 minutes</span>
+                        Current wait time is <span class="text-emerald-600 font-semibold"><span id="backlog"
+                                class="transition-opacity duration-200"></span>
+                            minutes</span>
                     </div>
                 </div>
             </form>
@@ -628,26 +630,14 @@
     {% endblock footer %}
 </body>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var navbar = document.getElementById('navbar-default');
-        var button = document.getElementById('menu-toggle');
-
-        // Attach click handler to the button
-        button.addEventListener('click', function () {
-            navbar.classList.toggle('hidden');
-        });
-
-        // Attach click handler to the links
-        var links = navbar.getElementsByTagName('a');
-        for (var i = 0; i < links.length; i++) {
-            links[i].addEventListener('click', function () {
-                navbar.classList.add('hidden');
-            });
-        }
-    });
-</script>
+{% if current_path and current_path == "/" %}
+<script src="{{ get_url(path='/js/backlog.js') }}" integrity="sha384-{{ get_hash(path='/js/backlog.js', sha_type=384,
+    base64=true) | safe }}" async defer></script>
 <script src="{{ get_url(path='/js/phone.js') }}" integrity="sha384-{{ get_hash(path='/js/phone.js', sha_type=384,
+    base64=true) | safe }}" async defer></script>
+{% endif %}
+
+<script src="{{ get_url(path='/js/navbar.js') }}" integrity="sha384-{{ get_hash(path='/js/navbar.js', sha_type=384,
     base64=true) | safe }}" async defer></script>
 <script data-goatcounter="https://tassel3090.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
