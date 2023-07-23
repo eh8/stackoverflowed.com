@@ -1,55 +1,40 @@
 {% extends "index.html" %} 
-{% block title %}Thanks - {{ config.title }}{% endblock title %}
+{% block title %}Thanks - {{ config.title }}{% endblock title %} 
+{% block ogtitle %}Thanks - {{ config.title }}{% endblock ogtitle %}
 
 {% block content %}
-
-<section class="bg-stone-100 sm:bg-blue-500 flex h-screen pt-48 sm:pt-24">
+<section class="hidden sm:flex bg-blue-500 h-screen py-16">
     <article class="max-w-screen-xl mx-auto prose prose-stone p-6">
-        <div class="md:w-2/3">
-            <h1 class="hidden sm:block tracking-tighter text-9xl font-light text-white">:)</h1>
-
-            <div class="sm:hidden flex justify-center items-center mb-2 w-12 h-12 rounded-full bg-emerald-500">
-                <!-- Icon -->
-                <svg class="flex-shrink-0 w-8 h-8 text-emerald-50" fill="currentColor" viewBox="0 0 20 20"
-                    xmlns="https://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"></path>
-                </svg>
-            </div>
-
-            <p class="sm:hidden text-xl sm:text-2xl text-stone-600 sm:text-white">SEV 2 alert has been triggered. We are
-                scrambling an on-call engineer to contact you as soon as possible.</p>
-
-            <p class="hidden sm:block text-xl sm:text-2xl text-stone-600 sm:text-white">Your emotional support request
-                is being assigned to a volunteer. We're just collecting some info about your vibes, and then we'll call
-                you shortly.</p>
-
-            <p class="hidden sm:block text-xl sm:text-2xl text-stone-600 sm:text-white"><span id="magic">0</span>%
-                complete</p>
-
-            <div class="hidden sm:flex flex-row space-x-4 mt-16">
-                <div>
-                    <img src="/qr.svg" class="h-24 sm:h-36 mt-0" />
+        <div class="max-w-screen-sm text-white">
+            <h1 class="text-9xl mb-8 font-light text-white -ml-2">:)</h1>
+            <p class="text-2xl font-light leading-relaxed">Your request needs to be assigned. We're now finding you an
+                available volunteer to contact you as soon as possible.</p>
+            <p class="text-2xl font-light leading-relaxed"><span id="magic">0</span>% complete</p>
+            <div class="flex flex-row space-x-4">
+                <div class="w-1/6">
+                    <img src="/qr.svg" class="mt-1" />
                 </div>
-                <div>
-                    <p class="text-sm text-white mt-0 pt-0">Try improving your vibes by with one of those fancy
-                        breathing exercises</p>
-
-                    <p class="text-sm text-white">Maybe refill your water bottle and try stretching while you're at it
-                    </p>
-
-                    <p class="text-sm text-white">Don't want to move? At least fix your poor posture as you blanky stare
-                        at this screen</p>
+                <div class="w-5/6">
+                    <p class="text-sm font-light mt-0">Take some deep breaths; everything is going to be okay.</p>
                 </div>
             </div>
         </div>
     </article>
 </section>
 
+<section class="sm:hidden bg-stone-100 py-16">
+    <article class="max-w-screen-xl mx-auto prose prose-stone p-6">
+        <div class="flex items-center justify-center mb-2 w-12 h-12 rounded-xl bg-stone-800">
+            <i class="iconoir-running flex-shrink-0 text-2xl text-stone-200" aria-hidden="true"></i>
+        </div>
+        <h3 class="text-stone-800 font-semibold">SEV 2 alert has been triggered</h3>
+        <p class="text-stone-600 text-sm">We are now scrambling an on-call engineer to contact you as soon as possible.</p>
+        <p class="text-stone-600 text-sm">Take some deep breaths; everything is going to be okay.</p>
+    </article>
+</section>
+
 <script>
     let num = 0;
-
     function updateNumber() {
         const delta = Math.random() > 0.50 ? 10 : -10;
         num += delta;
@@ -58,7 +43,6 @@
         }
         document.getElementById('magic').innerText = num;
     }
-
     setInterval(updateNumber, 3000);
 </script>
 

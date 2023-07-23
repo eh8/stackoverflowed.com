@@ -19,4 +19,4 @@ function updateNumber() {
     }, 750);
 }
 
-setInterval(updateNumber, 10000);
+setInterval(updateNumber, 30000);
