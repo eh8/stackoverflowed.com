@@ -16,7 +16,7 @@ function updateNumber() {
     setTimeout(() => {
         backlogElement.innerText = num;
         backlogElement.classList.remove('opacity-0');
-    }, 500);
+    }, 750);
 }
 
-setInterval(updateNumber, 10000);
+setInterval(updateNumber, 5000)

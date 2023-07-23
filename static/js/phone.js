@@ -58,7 +58,7 @@ phone_input.addEventListener('input', () => {
 });
 
 phone_input.addEventListener('invalid', () => {
-    phone_input.setCustomValidity('Please provide a valid phone number');
+    phone_input.setCustomValidity('Please provide a valid US phone number');
 });
 
 phone_input.addEventListener('keydown', enforceFormat);
