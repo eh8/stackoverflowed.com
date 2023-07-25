@@ -3,7 +3,10 @@
 // and
 // https://stackoverflow.com/questions/30058927/format-a-phone-number-as-a-user-types-using-pure-javascript
 
+// Get the reference of the HTML elements
 var phone_input = document.getElementById("phone");
+var country_select = document.getElementById("country");
+var country_code_span = document.getElementById("country_code");
 
 const isNumericInput = (event) => {
     const key = event.keyCode;
@@ -36,19 +39,25 @@ const formatToPhone = (event) => {
         return;
     }
 
-    // I am lazy and don't like to type things more than once
+    var selected_country = country_select.options[country_select.selectedIndex].value;
     const target = event.target;
-    const input = event.target.value.replace(/\D/g, '').substring(0, 10); // First ten digits of input only
-    const zip = input.substring(0, 3);
-    const middle = input.substring(3, 6);
-    const last = input.substring(6, 10);
+    const input = event.target.value.replace(/\D/g, '');
 
-    if (input.length > 6) {
-        target.value = `(${zip}) ${middle}-${last}`;
-    } else if (input.length > 3) {
-        target.value = `(${zip}) ${middle}`;
-    } else if (input.length > 0) {
-        target.value = `(${zip}`;
+    if (selected_country === 'US') {
+        const inputFormatted = input.substring(0, 10);
+        const zip = inputFormatted.substring(0, 3);
+        const middle = inputFormatted.substring(3, 6);
+        const last = inputFormatted.substring(6, 10);
+
+        if (inputFormatted.length > 6) {
+            target.value = `(${zip}) ${middle}-${last}`;
+        } else if (inputFormatted.length > 3) {
+            target.value = `(${zip}) ${middle}`;
+        } else if (inputFormatted.length > 0) {
+            target.value = `(${zip}`;
+        }
+    } else if (selected_country === 'DE') {
+        target.value = input; // No specific formatting for German numbers
     }
 };
 
@@ -58,8 +67,23 @@ phone_input.addEventListener('input', () => {
 });
 
 phone_input.addEventListener('invalid', () => {
-    phone_input.setCustomValidity('Please provide a valid US phone number');
+    phone_input.setCustomValidity('Please provide a valid phone number');
 });
 
 phone_input.addEventListener('keydown', enforceFormat);
 phone_input.addEventListener('keyup', formatToPhone);
+
+country_select.addEventListener('change', function() {
+    var selected_country = country_select.options[country_select.selectedIndex].value;
+
+    // change the country code based on the selected country
+    switch (selected_country) {
+        case 'US':
+            country_code_span.textContent = '+1';
+            break;
+        case 'DE':
+            country_code_span.textContent = '+49';
+            break;
+        // you can add more cases if you have more countries
+    }
+});
