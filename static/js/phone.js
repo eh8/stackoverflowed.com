@@ -43,7 +43,7 @@ const formatToPhone = (event) => {
     const target = event.target;
     const input = event.target.value.replace(/\D/g, '');
 
-    if (selected_country === 'US') {
+    if (selected_country === 'USA') {
         const inputFormatted = input.substring(0, 10);
         const zip = inputFormatted.substring(0, 3);
         const middle = inputFormatted.substring(3, 6);
@@ -56,7 +56,7 @@ const formatToPhone = (event) => {
         } else if (inputFormatted.length > 0) {
             target.value = `(${zip}`;
         }
-    } else if (selected_country === 'DE') {
+    } else if (selected_country === 'DEU') {
         target.value = input; // No specific formatting for German numbers
     }
 };
@@ -78,10 +78,10 @@ country_select.addEventListener('change', function() {
 
     // change the country code based on the selected country
     switch (selected_country) {
-        case 'US':
+        case 'USA':
             country_code_span.textContent = '+1';
             break;
-        case 'DE':
+        case 'DEU':
             country_code_span.textContent = '+49';
             break;
         // you can add more cases if you have more countries
