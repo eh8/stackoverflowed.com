@@ -7,8 +7,8 @@ module.exports = {
     },
     fontFamily: {
       sans: ['Noto Sans', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
-      mono: ['Consolas', 'monospace'],
+      serif: ['Roboto Slab', 'serif'],
+      mono: ['ui-monospace','Menlo','Monaco','Consolas', 'monospace'],
     }
   },
   plugins: [
