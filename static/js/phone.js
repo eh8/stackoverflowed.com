@@ -44,6 +44,11 @@ const formatToPhone = (event) => {
     const input = event.target.value.replace(/\D/g, '');
 
     if (selected_country === 'USA') {
+        // Enforcing US phone number format
+        // Need to double back slash due to JavaScript quirk
+        // https://stackoverflow.com/questions/39592208/dynamically-adding-pattern-and-title-attributes-to-input-control
+        phone_input.setAttribute("pattern", "\\(\\d{3}\\) \\d{3}-\\d{4}");
+
         const inputFormatted = input.substring(0, 10);
         const zip = inputFormatted.substring(0, 3);
         const middle = inputFormatted.substring(3, 6);
@@ -57,6 +62,8 @@ const formatToPhone = (event) => {
             target.value = `(${zip}`;
         }
     } else if (selected_country === 'DEU') {
+        phone_input.removeAttribute("pattern"); // No number enforcement
+
         target.value = input; // No specific formatting for German numbers
     }
 };
@@ -73,7 +80,7 @@ phone_input.addEventListener('invalid', () => {
 phone_input.addEventListener('keydown', enforceFormat);
 phone_input.addEventListener('keyup', formatToPhone);
 
-country_select.addEventListener('change', function() {
+country_select.addEventListener('change', function () {
     var selected_country = country_select.options[country_select.selectedIndex].value;
 
     // change the country code based on the selected country
@@ -86,4 +93,12 @@ country_select.addEventListener('change', function() {
             break;
         // you can add more cases if you have more countries
     }
+
+    // simulate keydown and keyup events
+    var keydownEvent = new KeyboardEvent('keydown');
+    var keyupEvent = new KeyboardEvent('keyup');
+
+    phone_input.dispatchEvent(keydownEvent);
+    phone_input.dispatchEvent(keyupEvent);
 });
+
