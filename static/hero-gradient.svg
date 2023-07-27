@@ -8,6 +8,9 @@
    id="svg24"
    sodipodi:docname="hero-gradient.svg"
    inkscape:version="1.3 (0e150ed, 2023-07-21)"
+   inkscape:export-filename="hero-gradient.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -1243,5 +1246,8 @@
   <path
      style="opacity:0.7;fill:#fc40bf;fill-opacity:1;stroke-width:4.11288;filter:url(#filter7)"
      d="M 1457.1049,524.10647 946.0842,319.69407 c 0,0 165.9297,-360.530305 166.6647,-342.678074 0.7349,17.8522198 73.0571,719.522064 73.0571,719.522064 l 101.3945,-461.08654 c 0,0 108.5383,84.212 99.6504,99.42892 -8.8879,15.21691 -119.9286,282.18736 -119.9286,282.18736 z"
-     id="path2" />
+     id="path2"
+     inkscape:export-filename="hero-gradient"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
 </svg>
