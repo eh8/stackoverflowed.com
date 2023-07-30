@@ -130,26 +130,27 @@
                     autocomplete="off">
 
                     {# Testing form is https://sendfly.io/v1/435e0671-b527-4738-93eb-64a6ce79e6f5#}
-                    <div class="p-3 ring-1 ring-stone-300/50 rounded-3xl shadow-lg bg-gradient-to-t from-stone-200/40 via-stone-100/40 to-stone-200/30 backdrop-blur">
+                    <div
+                        class="p-3 ring-1 ring-stone-300/50 rounded-3xl shadow-lg bg-gradient-to-t from-stone-200/40 via-stone-100/40 to-stone-200/30 backdrop-blur">
                         <div class="group">
                             <select id="country" name="Country"
-                                class="group-first:rounded-t-2xl group-last:rounded-b-2xl p-4 w-full text-base text-stone-700 hover:bg-gray-100 transition-all appearance-none border border-stone-300 border-b-0">
+                                class="group-first:rounded-t-2xl group-last:rounded-b-2xl p-4 w-full text-base text-stone-700 hover:bg-gray-100 transition-all appearance-none border border-stone-300">
                                 <option value="USA">United States</option>
                                 <option value="DEU">Germany</option>
                             </select>
                         </div>
                         <div class="group inline-flex w-full" role="group">
                             <div
-                                class="p-4 text-base text-gray-500 bg-gray-100 font-mono border border-stone-300 border-r-0 select-none">
+                                class="p-4 text-base text-gray-500 bg-gray-100 font-mono border-l border-stone-300 select-none">
                                 <span id="country_code">+1</span>
                             </div>
                             <input type="tel" id="phone" name="Phone"
-                                class="p-4 text-stone-900 text-base w-full hover:bg-gray-100 transition-all border border-stone-300"
+                                class="p-4 text-stone-900 text-base w-full hover:bg-gray-100 transition-all border-y-0 border-x border-stone-300"
                                 placeholder="Phone number" required>
                         </div>
                         <div class="group">
                             <input type="text" id="message" name="Message"
-                                class="group-first:rounded-t-2xl group-last:rounded-b-2xl p-4 w-full text-base text-stone-900 hover:bg-gray-100 transition-all border border-stone-300 border-t-0"
+                                class="group-first:rounded-t-2xl group-last:rounded-b-2xl p-4 w-full text-base text-stone-900 hover:bg-gray-100 transition-all border border-stone-300"
                                 placeholder="What's up?" required>
                         </div>
                     </div>
@@ -451,7 +452,8 @@
                     <div
                         class="md:group-first:rounded-l-3xl md:group-last:rounded-r-3xl rounded-3xl lg:rounded-none flex flex-col p-6 mx-auto max-w-lg text-stone-900 bg-white ease-in duration-100 border border-stone-200 lg:border-r-0 xl:p-8">
                         <div class="mb-4 sm:mb-8">
-                            <div class="max-w-fit relative rounded-full px-3 py-1 text-xs text-orange-600 bg-orange-100">
+                            <div
+                                class="max-w-fit relative rounded-full px-3 py-1 text-xs text-orange-600 bg-orange-100">
                                 Most popular
                             </div>
                         </div>
@@ -460,7 +462,8 @@
                             <span class="mr-1 text-3xl md:text-5xl text-stone-700 tracking-tight font-bold">$0</span>
                             <span class="text-stone-500">/month</span>
                         </div>
-                        <p class="text-stone-600 py-6">For the developer desperately wrestling a segfault for three hours
+                        <p class="text-stone-600 py-6">For the developer desperately wrestling a segfault for three
+                            hours
                         </p>
                         <ul role="list" class="mb-8 space-y-4 text-left text-stone-600">
                             <li class="flex items-center space-x-3">
@@ -507,7 +510,8 @@
                             <span class="mr-1 text-3xl md:text-5xl text-stone-700 tracking-tight font-bold">$0</span>
                             <span class="text-stone-500">/month</span>
                         </div>
-                        <p class="text-stone-600 py-6">For the product manager attending six back-to-back Monday meetings
+                        <p class="text-stone-600 py-6">For the product manager attending six back-to-back Monday
+                            meetings
                         </p>
                         <ul role="list" class="mb-8 space-y-4 text-left text-stone-600">
                             <li class="flex items-center space-x-3">
@@ -585,36 +589,32 @@
                     <div
                         class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b border-stone-300/80 md:pb-8">
                         <div class="md:w-2/5">
-                            <h2 class="font-semibold mb-2">What's the catch here?</h2>
-                        </div>
-                        <div class="md:w-3/5 mb-6 md:mb-0">
-                            <p class="text-base text-stone-600">There isn't! We don't record, store, or sell any
-                                personally identifable information about you or what you say.</p>
-                        </div>
-                    </div>
-                    <div
-                        class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b border-stone-300/80 md:pb-8">
-                        <div class="md:w-2/5">
-                            <h2 class="font-semibold mb-2">Why do you need my phone number?</h2>
-                        </div>
-                        <div class="md:w-3/5 mb-6 md:mb-0">
-                            <p class="text-base text-stone-600">This is the easiest way for us to coordinate which one
-                                of us should respond.</p>
-                        </div>
-                    </div>
-                    <div
-                        class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b border-stone-300/80 md:pb-8">
-                        <div class="md:w-2/5">
                             <h2 class="font-semibold mb-2">Who are you?</h2>
                         </div>
                         <div class="md:w-3/5 mb-6 md:mb-0">
-                            <p class="text-base text-stone-600">We're a volunteer network of people working throughout
-                                the tech industry.</p>
-                            <br>
-                            <p class="text-base text-stone-600">Originally, we were a small group of friends who often
-                                ranted
-                                to each other about work. We believe that humor and candor can help us address (or
-                                simply cope) with the unique problems and lifestyle of our industry.</p>
+                            <p class="text-base text-stone-600">We're a volunteer network of under 57,000 tech
+                                professionals working across the industry.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b border-stone-300/80 md:pb-8">
+                        <div class="md:w-2/5">
+                            <h2 class="font-semibold mb-2">What's the catch here?</h2>
+                        </div>
+                        <div class="md:w-3/5 mb-6 md:mb-0">
+                            <p class="text-base text-stone-600">There isn't. We don't record, store, or sell any
+                                information during your conversation with us.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b border-stone-300/80 md:pb-8">
+                        <div class="md:w-2/5">
+                            <h2 class="font-semibold mb-2">But then why do you need my phone number?</h2>
+                        </div>
+                        <div class="md:w-3/5 mb-6 md:mb-0">
+                            <p class="text-base text-stone-600">Phone calls aren't perfect, but they provide a balanced
+                                trade-off between privacy, universality, and ease of coordinating a response.
+                            </p>
                         </div>
                     </div>
                     <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center">
