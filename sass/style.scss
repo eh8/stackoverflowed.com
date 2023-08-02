@@ -4,3 +4,19 @@
 @tailwind components;
 @tailwind utilities;
 
+.iti__selected-flag {
+    padding-left: 16px !important;
+    padding-top: 3px !important;
+}
+
+.iti--allow-dropdown input, .iti--allow-dropdown input[type="text"], .iti--allow-dropdown input[type="tel"], .iti--separate-dial-code input, .iti--separate-dial-code input[type="text"], .iti--separate-dial-code input[type="tel"] {
+    padding-left: 60px !important;
+}
+ 
+.iti__country-list {
+    min-width: 303px;
+}
+
+.iti__country {
+    padding: 8px 16px !important;
+}
