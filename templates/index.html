@@ -25,6 +25,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+
     <meta property="og:title"
         content="{% block ogtitle %}{{ config.title }} - Where Developers Vent{% endblock ogtitle %}">
     <meta property="og:description" content="{% block ogdesc %}{{config.description}}{% endblock ogdesc %}">
@@ -40,7 +42,7 @@
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-3 p-6">
             <a href="/" class="">
                 <span class="sr-only">Stack Overflowed</span>
-                <img class="h-5 w-auto" src="/logos/stackoverflowed.svg" alt="">
+                <img class="h-5 w-auto" src="/logos/stackoverflowed.svg" alt="" draggable="false">
             </a>
             <button type="button" id="menu-toggle" class="inline-flex items-center justify-center sm:hidden py-1"
                 aria-controls="navbar-default" aria-expanded="false">
@@ -73,13 +75,13 @@
     {% endblock nav %} {% block content %}
     <section class="bg-cover bg-center bg-[url('/pattern.png')] border-b border-stone-200 relative overflow-hidden">
         <img src="/hero-gradient.png"
-            class="absolute hidden md:block top-0 right-1/2 overflow-hidden select-none opacity-50 md:opacity-75"
-            alt="">
+            class="absolute hidden md:block top-0 right-1/2 overflow-hidden select-none opacity-50 md:opacity-75 pointer-events-none"
+            alt="" draggable="false">
         <img src="/hero-gradient.png"
-            class="absolute hidden md:block top-0 left-1/2 overflow-hidden select-none opacity-50 md:opacity-75 transform -scale-100"
-            alt="">
+            class="absolute hidden md:block top-0 left-1/2 overflow-hidden select-none opacity-50 md:opacity-75 transform -scale-100 pointer-events-none"
+            alt="" draggable="false">
         <div class="max-w-9xl mx-auto py-16 p-6 flex flex-nowrap items-center justify-center md:gap-16">
-            <div class="-rotate-6 hover:-rotate-12 transition z-0 hidden md:block">
+            <div class="-rotate-6 hover:-rotate-12 transition duration-200 z-0 hidden md:block">
                 <div
                     class="p-3 ring-1 ring-stone-300/50 rounded-3xl shadow-xl bg-gradient-to-t from-stone-300/30 via-stone-400/20 to-stone-100/30 backdrop-blur">
                     <div class="relative lg:static w-[450px]">
@@ -122,61 +124,47 @@
                         tech people
                     </span>
                 </h1>
-                <p class="mt-6 max-w-fit mx-auto p-2 text-lg text-stone-600">
-                    Free and private. Yes, this is real.</p>
-                {# Production form #}
+                <div
+                    class="my-6 max-w-fit mx-auto relative rounded-full px-3 py-1 text-sm text-stone-600 ring-1 ring-stone-300 bg-white">
+                    <div class="flex justify-center items-center">
+                        <span class="relative flex h-3 w-3">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-xl bg-emerald-400 opacity-50"></span>
+                            <span class="relative inline-flex rounded-xl h-3 w-3 bg-emerald-500"></span>
+                        </span>
+                        <div class="pl-2 text-sm text-stone-500">
+                            Estimated wait time is <span class="text-emerald-600 font-semibold"><span id="backlog"
+                                    class="transition-opacity"></span>
+                                minutes</span>
+                        </div>
+                    </div>
+                </div>
+                {# Prod form is https://sendfly.io/v1/8350c785-162d-4a6b-8cd2-659db7fdbe6d #}
+                {# Test form is https://sendfly.io/v1/435e0671-b527-4738-93eb-64a6ce79e6f5 #}
                 <form class="gform my-6 max-w-sm mx-auto"
                     action="https://sendfly.io/v1/8350c785-162d-4a6b-8cd2-659db7fdbe6d" method="post"
                     autocomplete="off">
-
-                    {# Testing form is https://sendfly.io/v1/435e0671-b527-4738-93eb-64a6ce79e6f5#}
                     <div
                         class="p-3 ring-1 ring-stone-300/50 rounded-3xl shadow-lg bg-gradient-to-t from-stone-200/40 via-stone-100/40 to-stone-200/30 backdrop-blur">
-                        <div class="group">
-                            <select id="country" name="Country"
-                                class="group-first:rounded-t-2xl group-last:rounded-b-2xl p-4 w-full text-base text-stone-700 hover:bg-gray-100 transition-all appearance-none border border-stone-300">
-                                <option value="USA">United States</option>
-                                <option value="DEU">Germany</option>
-                            </select>
-                        </div>
-                        <div class="group inline-flex w-full" role="group">
-                            <div
-                                class="p-4 text-base text-gray-500 bg-gray-100 font-mono border-l border-stone-300 select-none">
-                                <span id="country_code">+1</span>
-                            </div>
-                            <input type="tel" id="phone" name="Phone"
-                                class="p-4 text-stone-900 text-base w-full hover:bg-gray-100 transition-all border-y-0 border-x border-stone-300"
-                                placeholder="Phone number" required>
-                        </div>
+                        <input type="text" id="country" name="Country" class="hidden" value="United States"
+                            placeholder="You shouldn't be seeing this" required>
+                        <input type="tel" id="phone" name="Phone"
+                            class="rounded-t-2xl p-4 w-full text-base text-stone-900 hover:bg-gray-100 transition-all border border-b-0 border-stone-300"
+                            required>
                         <div class="group">
                             <input type="text" id="message" name="Message"
-                                class="group-first:rounded-t-2xl group-last:rounded-b-2xl p-4 w-full text-base text-stone-900 hover:bg-gray-100 transition-all border border-stone-300"
-                                placeholder="What's up?" required>
-                        </div>
-                    </div>
-                    <div
-                        class="my-4 max-w-fit mx-auto relative rounded-full px-3 py-1 text-sm text-stone-600 ring-1 ring-stone-300 bg-white">
-                        <div class="flex justify-center items-center">
-                            <span class="relative flex h-3 w-3">
-                                <span
-                                    class="animate-ping absolute inline-flex h-full w-full rounded-xl bg-emerald-400 opacity-50"></span>
-                                <span class="relative inline-flex rounded-xl h-3 w-3 bg-emerald-500"></span>
-                            </span>
-                            <div class="pl-2 text-sm text-stone-500">
-                                Estimated wait time is <span class="text-emerald-600 font-semibold"><span id="backlog"
-                                        class="transition-opacity"></span>
-                                    minutes</span>
-                            </div>
+                                class="rounded-b-2xl p-4 w-full text-base text-stone-900 hover:bg-gray-100 transition-all border border-stone-300"
+                                placeholder="What's on your mind?" maxlength="200" required>
                         </div>
                     </div>
                     <button type="submit"
-                        class="shadow-lg ease-in duration-100 shadow-orange-500/30 hover:shadow-orange-500/60 mx-auto rounded-xl bg-orange-500 px-4 py-1.5 text-base leading-7 text-white hover:bg-orange-600 focus:ring-4 focus:ring-orange-200">
+                        class="my-4 shadow-lg ease-in duration-100 shadow-orange-500/20 hover:shadow-orange-500/60 mx-auto rounded-xl bg-orange-500 px-5 py-2.5 text-base leading-7 text-white hover:bg-orange-600 focus:ring-4 focus:ring-orange-200">
                         Call me now
                         <i class="pl-1 iconoir-phone-add text-lg align-[-3px]" aria-hidden="true"></i>
                     </button>
                 </form>
             </div>
-            <div class="rotate-6 hover:rotate-12 transition z-0 hidden md:block">
+            <div class="rotate-6 hover:rotate-12 transition duration-200 z-0 hidden md:block">
                 <div
                     class="p-3 ring-1 ring-stone-300/50 rounded-3xl shadow-xl bg-gradient-to-t from-stone-300/30 via-stone-400/20 to-stone-100/30 backdrop-blur">
                     <div class="relative lg:static w-[450px]">
@@ -387,11 +375,11 @@
     <section class="bg-contain bg-center bg-[url('/pattern.png')] md:border-b md:border-stone-200 relative"
         id="pricing">
         <img src="/hero-gradient.png"
-            class="absolute hidden md:block top-0 right-1/2 overflow-hidden select-none opacity-30 transform -scale-y-100 z-0"
-            alt="">
+            class="absolute hidden md:block top-0 right-1/2 overflow-hidden select-none opacity-30 transform -scale-y-100 z-0 pointer-events-none"
+            alt="" draggable="false">
         <img src="/hero-gradient.png"
-            class="absolute hidden md:block top-0 left-1/2 overflow-hidden select-none opacity-30 transform -scale-x-100 z-0"
-            alt="">
+            class="absolute hidden md:block top-0 left-1/2 overflow-hidden select-none opacity-30 transform -scale-x-100 z-0 pointer-events-none"
+            alt="" draggable="false">
         <div class="py-16 px-6 mx-auto max-w-screen-xl lg:py-24 relative z-10">
             <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
                 <h3 class="font-semibold text-stone-500 mb-2">Pricing</h3>
@@ -662,8 +650,8 @@
 {% if current_path and current_path == "/" %}
 <script src="{{ get_url(path='/js/backlog.js') }}" integrity="sha384-{{ get_hash(path='/js/backlog.js', sha_type=384,
     base64=true) | safe }}" async defer></script>
-<script src="{{ get_url(path='/js/phone.js') }}" integrity="sha384-{{ get_hash(path='/js/phone.js', sha_type=384,
-    base64=true) | safe }}" async defer></script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+<script src="{{ get_url(path='/js/phone.js') }}" async defer></script>
 {% endif %}
 <script src="{{ get_url(path='/js/navbar.js') }}" integrity="sha384-{{ get_hash(path='/js/navbar.js', sha_type=384,
     base64=true) | safe }}"></script>
