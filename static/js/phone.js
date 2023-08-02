@@ -6,25 +6,28 @@ const iti = window.intlTelInput(input, {
     preferredCountries: ["us"],
     nationalMode: true,
     customContainer: "w-full",
-    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js" // just for formatting/placeholders etc
+    hiddenInput: "Phone", // you need this to ensure phone number dispatched to volunteer is internationalized
+    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
 });
 
 const handleChange = () => {
     if (input.value && !iti.isValidNumber()) {
+        input.value = iti.getNumber(intlTelInputUtils.numberFormat.NATIONAL);
         input.setCustomValidity("Please provide a valid phone number.");
-        console.log("invalid")
+    } else if (input.value && iti.isValidNumber()) {
+        input.value = iti.getNumber(intlTelInputUtils.numberFormat.NATIONAL);
+        input.setCustomValidity("");
     } else {
         input.setCustomValidity("");
-        console.log("valid")
     }
 };
-
 
 // listen to "keyup", but also "change" to update when the user selects a country
 input.addEventListener('change', handleChange);
 input.addEventListener('keyup', handleChange);
 
 // listen to the telephone input for changes
+input.addEventListener('countrychange', handleChange);
 input.addEventListener('countrychange', () => {
     country.value = iti.getSelectedCountryData().name;
 });
