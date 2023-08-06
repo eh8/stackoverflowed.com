@@ -81,7 +81,7 @@
             class="absolute hidden md:block top-0 left-1/2 overflow-hidden select-none opacity-50 md:opacity-75 transform -scale-x-100 pointer-events-none"
             alt="" draggable="false">
         <div
-            class="max-w-9xl mx-auto py-10 md:py-16 lg:py-24 2xl:py-32 p-4 flex flex-nowrap items-center justify-center md:gap-16">
+            class="max-w-9xl mx-auto py-8 lg:py-16 2xl:py-24 p-4 flex flex-nowrap items-center justify-center md:gap-16">
             <div class="-rotate-6 hover:-rotate-12 transition duration-200 z-0 hidden md:block">
                 <div
                     class="p-3 ring-1 ring-stone-300/50 rounded-3xl shadow-xl bg-gradient-to-t from-stone-300/30 via-stone-400/20 to-stone-100/30 backdrop-blur">
@@ -144,7 +144,7 @@
                 </div>
                 {# Prod form is https://sendfly.io/v1/8350c785-162d-4a6b-8cd2-659db7fdbe6d #}
                 {# Test form is https://sendfly.io/v1/435e0671-b527-4738-93eb-64a6ce79e6f5 #}
-                <form class="gform my-6 max-w-sm mx-auto"
+                <form class="gform my-6 space-y-4 max-w-sm mx-auto"
                     action="https://sendfly.io/v1/8350c785-162d-4a6b-8cd2-659db7fdbe6d" method="post"
                     autocomplete="off">
                     <div
@@ -154,14 +154,21 @@
                         <input type="tel" id="phone"
                             class="rounded-t-2xl p-4 w-full text-base text-stone-900 hover:bg-gray-100 transition-all border border-b-0 border-stone-300"
                             required>
-                        <div class="group">
-                            <input type="text" id="message" name="Message"
-                                class="rounded-b-2xl p-4 w-full text-base text-stone-900 hover:bg-gray-100 transition-all border border-stone-300"
-                                placeholder="What's on your mind?" maxlength="200" required>
-                        </div>
+                        <input type="text" id="message" name="Message"
+                            class="rounded-b-2xl p-4 w-full text-base text-stone-900 hover:bg-gray-100 transition-all border border-stone-300"
+                            placeholder="What's on your mind?" maxlength="200" required>
+                    </div>
+                    <div class="text-xs space-y-2 text-stone-500">
+                        <p>By clicking "call me now," you consent to being called by a volunteer and agree with
+                            our
+                            <a href="/privacy" class="underline">privacy policy.</a> If you pose an imminent risk to
+                            yourself or others, contact your <a href="https://blog.opencounseling.com/suicide-hotlines/"
+                                class="underline">national
+                                crisis hotline</a>.
+                        </p>
                     </div>
                     <button type="submit"
-                        class="mt-6 shadow-lg ease-in duration-100 shadow-orange-500/20 hover:shadow-orange-500/60 mx-auto rounded-xl bg-orange-500 px-5 py-2.5 text-base leading-7 text-white hover:bg-orange-600 focus:ring-4 focus:ring-orange-200">
+                        class="shadow-lg ease-in duration-100 font-medium shadow-orange-500/20 hover:shadow-orange-500/60 mx-auto rounded-xl bg-orange-500 px-5 py-2.5 text-base leading-7 text-white hover:bg-orange-600 focus:ring-4 focus:ring-orange-200">
                         Call me now
                         <i class="pl-1 iconoir-phone-add text-lg align-[-3px]" aria-hidden="true"></i>
                     </button>
@@ -540,97 +547,118 @@
         </div>
     </section>
     <section class="bg-stone-100" id="faqs">
-        <div class="py-16 lg:pt-24 px-4 mx-auto max-w-7xl">
+        <div class="py-16 lg:py-24 px-4 mx-auto max-w-7xl">
             <div class="mx-auto items-center text-center pb-16">
                 <h2 class="text-3xl font-bold font-serif tracking-tight text-stone-700 md:text-4xl">
                     Frequently asked questions
                 </h2>
             </div>
-            <div class="pb-10">
-                <div class="grid grid-cols-1 gap-8">
-                    <div
-                        class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b border-stone-300/80 md:pb-8">
-                        <div class="md:w-2/5">
-                            <h2 class="font-semibold mb-2">Is this real?</h2>
-                        </div>
-                        <div class="md:w-3/5 mb-6 md:mb-0">
-                            <p class="text-base text-stone-600">The
-                                hotline is real and staffed by a volunteer network.</p>
-                        </div>
+            <div class="grid grid-cols-1 gap-8">
+                <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b border-stone-300/80 md:pb-8">
+                    <div class="md:w-2/5">
+                        <h2 class="font-semibold mb-2">Is this real?</h2>
                     </div>
-                    <div
-                        class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b border-stone-300/80 md:pb-8">
-                        <div class="md:w-2/5">
-                            <h2 class="font-semibold mb-2">Is this affilated with Stack Overflow?</h2>
-                        </div>
-                        <div class="md:w-3/5 mb-6 md:mb-0">
-                            <p class="text-base text-stone-600">No.</p>
-                        </div>
+                    <div class="md:w-3/5 mb-6 md:mb-0">
+                        <p class="text-base text-stone-600">The
+                            hotline is real and staffed by a volunteer network.</p>
                     </div>
-                    <div
-                        class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b border-stone-300/80 md:pb-8">
-                        <div class="md:w-2/5">
-                            <h2 class="font-semibold mb-2">Are you even allowed to call this Stack Overflowed?
-                            </h2>
-                        </div>
-                        <div class="md:w-3/5 mb-6 md:mb-0">
-                            <p class="text-base text-stone-600">We hope so.</p>
-                        </div>
+                </div>
+                <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b border-stone-300/80 md:pb-8">
+                    <div class="md:w-2/5">
+                        <h2 class="font-semibold mb-2">Is this affilated with Stack Overflow?</h2>
                     </div>
-                    <div
-                        class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b border-stone-300/80 md:pb-8">
-                        <div class="md:w-2/5">
-                            <h2 class="font-semibold mb-2">Who are you?</h2>
-                        </div>
-                        <div class="md:w-3/5 mb-6 md:mb-0">
-                            <p class="text-base text-stone-600">We're a volunteer network of under 4,000,000+ tech
-                                professionals working across the industry.</p>
-                        </div>
+                    <div class="md:w-3/5 mb-6 md:mb-0">
+                        <p class="text-base text-stone-600">No.</p>
                     </div>
-                    <div
-                        class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b border-stone-300/80 md:pb-8">
-                        <div class="md:w-2/5">
-                            <h2 class="font-semibold mb-2">What's the catch here?</h2>
-                        </div>
-                        <div class="md:w-3/5 mb-6 md:mb-0">
-                            <p class="text-base text-stone-600">There isn't. We don't record, store, or sell any
-                                information during your conversation with us.</p>
-                        </div>
+                </div>
+                <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b border-stone-300/80 md:pb-8">
+                    <div class="md:w-2/5">
+                        <h2 class="font-semibold mb-2">Are you even allowed to call this Stack Overflowed?
+                        </h2>
                     </div>
-                    <div
-                        class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b border-stone-300/80 md:pb-8">
-                        <div class="md:w-2/5">
-                            <h2 class="font-semibold mb-2">But then why do you need my phone number?</h2>
-                        </div>
-                        <div class="md:w-3/5 mb-6 md:mb-0">
-                            <p class="text-base text-stone-600">Phone calls aren't perfect, but they provide a balanced
-                                trade-off between privacy, universality, and ease of coordinating a response.
-                            </p>
-                        </div>
+                    <div class="md:w-3/5 mb-6 md:mb-0">
+                        <p class="text-base text-stone-600">We hope so.</p>
                     </div>
-                    <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center">
-                        <div class="md:w-2/5">
-                            <h2 class="font-semibold mb-2">Can I volunteer for the hotline?</h2>
-                        </div>
-                        <div class="md:w-3/5 mb-6 md:mb-0">
-                            <p class="text-base text-stone-600">Give us a call and mention that you are interested in
-                                being a volunteer, at which point we will immediately convert the therapy call into a
-                                four-stage technical interview.</p>
-                            <br>
-                            <p class="text-base text-stone-600">Or you can just email us.</p>
-                        </div>
+                </div>
+                <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b border-stone-300/80 md:pb-8">
+                    <div class="md:w-2/5">
+                        <h2 class="font-semibold mb-2">Who are you?</h2>
+                    </div>
+                    <div class="md:w-3/5 mb-6 md:mb-0">
+                        <p class="text-base text-stone-600">We're a volunteer network of under 4,000,000+ tech
+                            professionals working across the industry.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b border-stone-300/80 md:pb-8">
+                    <div class="md:w-2/5">
+                        <h2 class="font-semibold mb-2">What's the catch here?</h2>
+                    </div>
+                    <div class="md:w-3/5 mb-6 md:mb-0">
+                        <p class="text-base text-stone-600">There isn't. We don't record, store, or sell any
+                            information during your conversation with us.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center border-b border-stone-300/80 md:pb-8">
+                    <div class="md:w-2/5">
+                        <h2 class="font-semibold mb-2">But then why do you need my phone number?</h2>
+                    </div>
+                    <div class="md:w-3/5 mb-6 md:mb-0">
+                        <p class="text-base text-stone-600">Phone calls aren't perfect, but they provide a balanced
+                            trade-off between privacy, universality, and ease of coordinating a response.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center">
+                    <div class="md:w-2/5">
+                        <h2 class="font-semibold mb-2">Can I volunteer for the hotline?</h2>
+                    </div>
+                    <div class="md:w-3/5">
+                        <p class="text-base text-stone-600">Give us a call and mention that you are interested in
+                            being a volunteer, at which point we will immediately convert the therapy call into a
+                            four-stage technical interview.</p>
+                        <br>
+                        <p class="text-base text-stone-600">Or you can just email us.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <section class="bg-stone-100">
+        <div class="mx-auto max-w-7xl py-16 lg:py-24 px-0 sm:px-4">
+            <div
+                class="relative isolate overflow-hidden bg-stone-900 px-4 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+                <img src="/hero-gradient.png"
+                    class="absolute left-1/2 top-0 -z-10 h-[64rem] w-[64rem] -translate-y-1/2 sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0 opacity-75"
+                    alt="" draggable="false">
+                <div class="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl font-serif">Refactor your
+                        feelings with Stack Overflowed</h2>
+                    <p class="mt-6 text-lg leading-8 text-gray-300">Prevent an existential crisis just in time for
+                        standup</p>
+                    <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
+                        <a href="/"
+                            class="shadow-lg ease-in duration-100 font-medium rounded-xl bg-orange-500 px-5 py-2.5 text-base leading-7 text-white hover:bg-orange-600 focus:ring-4 focus:ring-orange-200">
+                            Get started
+                        </a>
+                        <a href="/#features" class="text-sm font-semibold leading-6 text-white">Learn more <span
+                                aria-hidden="true">→</span></a>
+                    </div>
+                </div>
+                <div class="relative mt-16 h-80 lg:mt-8">
+                    <img class="absolute left-0 top-0 w-[71rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
+                        src="/complex.png" alt="confusing diagram">
+                </div>
+            </div>
+        </div>
+    </section>
+
     {% endblock content %} {% block footer %}
     <footer class="bg-white">
         <div class="py-16 p-4 mx-auto max-w-screen-xl text-center">
             <a href="#" class="flex justify-center items-center text-2xl font-semibold text-stone-900">
                 <img class="mr-2 h-6" src="/logos/stackoverflowed.svg" />
             </a>
-            <p class="my-6 text-stone-500 text-sm">Saving you from an existential crisis just in time for standup</p>
+            <p class="my-6 text-stone-500 text-sm">Therapy for tech people</p>
             <ul
                 class="flex flex-wrap justify-center items-center mb-6 text-stone-600 text-sm divide-x-2 divide-stone-200">
                 <li>
