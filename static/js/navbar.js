@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
     for (var i = 0; i < links.length; i++) {
         links[i].addEventListener('click', function () {
             navbar.classList.add('hidden');
+            icon.classList.toggle('iconoir-menu');
+            icon.classList.toggle('iconoir-cancel');
         });
     }
 });
