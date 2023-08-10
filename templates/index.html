@@ -87,15 +87,15 @@
                     </span>
                 </h1>
                 <p class="mt-6 py-2 text-lg text-stone-600">
-                    Developers, designers, data scientists, product managers—from startups to Big Tech—does the venting,
-                    and our volunteer network does the listening.</p>
+                    Developers, designers, data scientists, and product managers do the venting and Stack Overflowed
+                    volunteers do the listening.</p>
                 {# Prod form is https://sendfly.io/v1/8350c785-162d-4a6b-8cd2-659db7fdbe6d #}
                 {# Test form is https://sendfly.io/v1/435e0671-b527-4738-93eb-64a6ce79e6f5 #}
                 <form class="gform my-6 space-y-4 max-w-md"
                     action="https://sendfly.io/v1/8350c785-162d-4a6b-8cd2-659db7fdbe6d" method="post"
                     autocomplete="off">
                     <div
-                        class="max-w-fit relative rounded-full px-3 py-1 text-sm text-stone-600 ring-1 ring-stone-200 bg-white/60">
+                        class="max-w-fit relative rounded-full px-3 py-1 text-sm text-stone-600 ring-1 ring-stone-200 bg-white/70">
                         <div class="flex justify-center items-center">
                             <span class="relative flex h-3 w-3">
                                 <span
@@ -120,11 +120,14 @@
                             class="rounded-b-2xl p-4 w-full text-base text-stone-900 hover:bg-gray-100 transition-all border border-stone-300/70 resize-none"
                             placeholder="What's on your mind?" maxlength="200" required>
                     </div>
-                    <button type="submit"
-                        class="shadow-lg ease-in duration-100 font-medium shadow-orange-500/20 hover:shadow-orange-500/60 mx-auto rounded-xl bg-orange-500 px-5 py-2.5 text-base leading-7 text-white hover:bg-orange-600 focus:ring-4 focus:ring-orange-200">
-                        Call me now
-                        <i class="pl-1 iconoir-phone-add text-lg align-[-3px]" aria-hidden="true"></i>
-                    </button>
+                    <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
+                        <button type="submit"
+                            class="shadow-lg ease-in duration-100 font-medium shadow-orange-500/20 hover:shadow-orange-500/60 rounded-xl bg-orange-500 px-5 py-2.5 text-base leading-7 text-white hover:bg-orange-600 focus:ring-4 focus:ring-orange-200">
+                            Call me now <i class="pl-1 iconoir-phone-add text-lg align-[-3px]" aria-hidden="true"></i>
+                        </button>
+                        <a href="/#volunteer" class="text-sm font-semibold leading-6 text-stone-700">Become a volunteer
+                            <span aria-hidden="true">→</span></a>
+                    </div>
                     <div class="text-xs space-y-2 text-stone-400">
                         <p>By clicking <i>call me now</i>, you consent to being called by a volunteer and agree with
                             our
@@ -530,7 +533,8 @@
                         <h2 class="font-semibold mb-2">Who are you?</h2>
                     </div>
                     <div class="md:w-3/5 mb-6 md:mb-0">
-                        <p class="text-base text-stone-600">We're volunteers who work in the tech industry ourselves.
+                        <p class="text-base text-stone-600">We're tech employees working across the industry and the
+                            world.
                         </p>
                     </div>
                 </div>
@@ -570,7 +574,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center">
+                <div class="flex flex-col md:flex-row md:gap-x-10 md:item-center" id="volunteer">
                     <div class="md:w-2/5">
                         <h2 class="font-semibold mb-2">Can I volunteer for the hotline?</h2>
                     </div>
