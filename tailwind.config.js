@@ -10,7 +10,7 @@ module.exports = {
     fontFamily: {
       sans: ['Noto Sans', 'sans-serif'],
       serif: ['Roboto Slab', 'serif'],
-      mono: ['ui-monospace', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+      mono: ['Fira Code', 'monospace'],
     }
   },
   plugins: [
