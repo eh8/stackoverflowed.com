@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     button.addEventListener('click', function () {
         navbar.classList.toggle('hidden');
         icon.classList.toggle('iconoir-menu');
-        icon.classList.toggle('iconoir-cancel');
+        icon.classList.toggle('iconoir-xmark');
     });
 
     // Attach click handler to the links
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         links[i].addEventListener('click', function () {
             navbar.classList.add('hidden');
             icon.classList.toggle('iconoir-menu');
-            icon.classList.toggle('iconoir-cancel');
+            icon.classList.toggle('iconoir-xmark');
         });
     }
 });
