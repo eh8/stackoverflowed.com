@@ -3,15 +3,13 @@
 To develop:
 
 ```bash
-$ ./tailwindcss -i sass/style.scss -o static/tailwind.css --watch
-
-$ zola serve
+$ just dev
 ```
 
 To deploy:
 
 ```bash
-$ ./tailwindcss -i sass/style.scss -o static/tailwind.css --minify
+$ just minify
 
 # Then git push
 ```
