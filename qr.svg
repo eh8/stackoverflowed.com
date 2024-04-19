@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 310" width="310" height="310">
+	<title>qr</title>
+	<defs>
+		<image  width="310" height="310" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATYAAAE2AQMAAADRcizqAAAAAXNSR0IB2cksfwAAAAZQTFRF////ToDuU/ckgAAAAU1JREFUeJztmMkNxSAMRC25AEqi9ZREAUh84oVAFOmfYhRp5pAFP04jvEAEQRD0HXEzFfZHF2VfBhfN6Tsr58u5LFFwgVwWo4p8VV9zG8Ht49qRKvWfSuD2c75ybQO3hdOorKUePPQcLVFwcZypsCe3wn/6A3DvcbPUMkr1KQguhGM9ONaCpWGUVpzFX3ABHGlhcdiPkPweq4PgAjj2Gi8epbZ8FQIXzPVs1gp7tW/WkfVfMbSCC+ZGVKYTsczTnDkILpazan86KHPjkQxeOgBwMRzR5JvlNYNveQ1cEHfKp8UxMqaxF1wkx2bUlMi8+N/6A3AR3NMO9rz2KHBvcjx7lFubL1fA7eD0nbU5Jr+BHGMkuGjucsu2LV6C28R5X2y6xhZwOznpvrQNuN9zgQvhRFN18eFRzQMXzJnKcFDmRtm7nCNwERwEQdAX9ANZDZeWhuQFHAAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+</svg>
